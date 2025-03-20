@@ -1,7 +1,7 @@
 import { useEffect } from 'react'
 import { applyTheme, useThemeStore } from '@/stores/theme'
 
-const ThemeListener = () => {
+export function ThemeListener() {
   const theme = useThemeStore((state) => state.theme)
 
   useEffect(() => {
@@ -23,5 +23,3 @@ const ThemeListener = () => {
 
   return null
 }
-
-export default ThemeListener

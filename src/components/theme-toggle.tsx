@@ -1,15 +1,23 @@
-import { Laptop, Moon, Sun } from 'lucide-react'
+import { Check, Laptop, LucideIcon, Moon, Sun } from 'lucide-react'
 import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
   DropdownMenuTrigger
 } from '@/components/ui/dropdown-menu'
-import { useThemeStore } from '@/stores/theme'
+import { cn } from '@/lib/utils'
+import { Theme, useThemeStore } from '@/stores/theme'
 import { Button } from './ui/button'
+
+const themeOptions: { value: Theme; icon: LucideIcon }[] = [
+  { value: 'light', icon: Sun },
+  { value: 'dark', icon: Moon },
+  { value: 'system', icon: Laptop }
+]
 
 export function ThemeToggle() {
   const setTheme = useThemeStore((state) => state.setTheme)
+  const theme = useThemeStore((state) => state.theme)
 
   return (
     <DropdownMenu>
@@ -21,18 +29,17 @@ export function ThemeToggle() {
         </Button>
       </DropdownMenuTrigger>
       <DropdownMenuContent align="end">
-        <DropdownMenuItem onClick={() => setTheme('light')}>
-          <Sun className="h-4 w-4" />
-          Light
-        </DropdownMenuItem>
-        <DropdownMenuItem onClick={() => setTheme('dark')}>
-          <Moon className="h-4 w-4" />
-          Dark
-        </DropdownMenuItem>
-        <DropdownMenuItem onClick={() => setTheme('system')}>
-          <Laptop className="h-4 w-4" />
-          System
-        </DropdownMenuItem>
+        {themeOptions.map((option) => (
+          <DropdownMenuItem
+            key={option.value}
+            onClick={() => setTheme(option.value)}
+            className={cn(theme === option.value && 'bg-blue-400/20')}
+          >
+            <option.icon className="h-4 w-4" />
+            <span className="capitalize">{option.value}</span>
+            {theme === option.value && <Check className="ml-auto h-4 w-4" />}
+          </DropdownMenuItem>
+        ))}
       </DropdownMenuContent>
     </DropdownMenu>
   )

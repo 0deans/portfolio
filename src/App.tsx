@@ -22,13 +22,16 @@ const App = () => {
             <img
               src="banner.jpg"
               alt="Profile banner"
-              className="max-h-72 w-full object-cover shadow-sm"
+              width="1200"
+              height="600"
+              loading="lazy"
+              className="aspect-[16/5] max-h-72 w-full bg-secondary object-cover shadow-sm sm:aspect-auto"
             />
           </div>
 
           <div className="dark absolute bottom-2 left-2 flex items-center sm:bottom-4 sm:left-4">
             <div className="relative">
-              <Avatar className="size-24 sm:size-32">
+              <Avatar className="size-20 sm:size-32">
                 <AvatarImage src="avatar.jpg" />
                 <AvatarFallback className="text-4xl">D</AvatarFallback>
               </Avatar>

@@ -14,7 +14,7 @@ const navItems = [
 
 const App = () => {
   return (
-    <div className="flex min-h-screen flex-col items-center p-4">
+    <div className="noise-bg flex min-h-screen flex-col items-center p-4">
       <ThemeListener />
       <div className="w-full max-w-4xl">
         <header className="relative">
@@ -25,7 +25,7 @@ const App = () => {
               width="1200"
               height="600"
               loading="lazy"
-              className="aspect-[16/5] max-h-72 w-full bg-secondary object-cover shadow-sm sm:aspect-auto"
+              className="bg-secondary aspect-[16/5] max-h-72 w-full object-cover shadow-sm sm:aspect-auto"
             />
           </div>
 

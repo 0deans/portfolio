@@ -1,3 +1,4 @@
+import { Briefcase, Download, Mail } from 'lucide-react'
 import { MobileNav } from './components/mobile-nav'
 import { ProfileInfo } from './components/profile-info'
 import { ThemeListener } from './components/theme-listener'
@@ -60,6 +61,54 @@ const App = () => {
           </nav>
           <ThemeToggle />
         </div>
+
+        <main className="mt-12">
+          <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
+            <section className="relative flex rounded-md border border-green-500">
+              <div className="flex items-center justify-center bg-green-500/10 p-4">
+                <Briefcase className="size-12 text-green-500 sm:size-16" />
+              </div>
+              <div className="flex flex-col justify-between p-3">
+                <h2 className="mb-1 flex items-center gap-2 text-xl font-bold">
+                  <span className="relative mr-1 flex h-2 w-2">
+                    <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-green-500 opacity-75"></span>
+                    <span className="relative inline-flex h-2 w-2 rounded-full bg-green-500"></span>
+                  </span>
+                  Open to Work
+                </h2>
+                <p className="text-muted-foreground text-sm">
+                  Full-Stack Developer with JavaScript/TypeScript
+                </p>
+                <div className="mt-2 flex flex-wrap gap-2">
+                  <Button size="sm" className="h-8 flex-1 gap-1" asChild>
+                    <a href="/blank.pdf" download>
+                      <Download className="h-3 w-3" />
+                      Resume
+                    </a>
+                  </Button>
+                  <Button
+                    size="sm"
+                    variant="outline"
+                    className="h-8 flex-1 gap-1"
+                    asChild
+                  >
+                    <a href="mailto:denysstetsenko4@gmail.com">
+                      <Mail className="h-3 w-3" />
+                      Contact
+                    </a>
+                  </Button>
+                </div>
+              </div>
+            </section>
+            <section className="relative border border-gray-400 bg-gray-200 p-4">
+              {/* Empty section 2 */}
+            </section>
+          </div>
+        </main>
+
+        <footer>
+          <p>temp</p>
+        </footer>
       </div>
     </div>
   )

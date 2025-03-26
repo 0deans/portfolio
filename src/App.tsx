@@ -1,4 +1,5 @@
 import { Briefcase, Download, Mail } from 'lucide-react'
+import { DuolingoWidget } from './components/duolingo-widget'
 import { MobileNav } from './components/mobile-nav'
 import { ProfileInfo } from './components/profile-info'
 import { ThemeListener } from './components/theme-listener'
@@ -68,7 +69,7 @@ const App = () => {
               <div className="flex items-center justify-center bg-green-500/10 p-4">
                 <Briefcase className="size-12 text-green-500 sm:size-16" />
               </div>
-              <div className="flex flex-col justify-between p-3">
+              <div className="flex flex-col justify-center p-3">
                 <h2 className="mb-1 flex items-center gap-2 text-xl font-bold">
                   <span className="relative mr-1 flex h-2 w-2">
                     <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-green-500 opacity-75"></span>
@@ -80,16 +81,16 @@ const App = () => {
                   Full-Stack Developer with JavaScript/TypeScript
                 </p>
                 <div className="mt-2 flex flex-wrap gap-2">
-                  <Button size="sm" className="h-8 flex-1 gap-1" asChild>
+                  <Button size="lg" className="flex-1 gap-1" asChild>
                     <a href="/blank.pdf" download>
                       <Download className="h-3 w-3" />
                       Resume
                     </a>
                   </Button>
                   <Button
-                    size="sm"
+                    size="lg"
                     variant="outline"
-                    className="h-8 flex-1 gap-1"
+                    className="flex-1 gap-1"
                     asChild
                   >
                     <a href="mailto:denysstetsenko4@gmail.com">
@@ -100,15 +101,9 @@ const App = () => {
                 </div>
               </div>
             </section>
-            <section className="relative border border-gray-400 bg-gray-200 p-4">
-              {/* Empty section 2 */}
-            </section>
+            <DuolingoWidget username="0dean" />
           </div>
         </main>
-
-        <footer>
-          <p>temp</p>
-        </footer>
       </div>
     </div>
   )

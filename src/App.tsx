@@ -1,4 +1,14 @@
-import { Briefcase, Download, Mail } from 'lucide-react'
+import {
+  Briefcase,
+  Calendar,
+  Download,
+  Github,
+  Languages,
+  Mail,
+  MapPin,
+  Send,
+  User
+} from 'lucide-react'
 import { DuolingoWidget } from './components/duolingo-widget'
 import { MobileNav } from './components/mobile-nav'
 import { ProfileInfo } from './components/profile-info'
@@ -8,9 +18,9 @@ import { Avatar, AvatarFallback, AvatarImage } from './components/ui/avatar'
 import { Button } from './components/ui/button'
 
 const navItems = [
-  { title: 'Home', href: '#' },
+  { title: 'Home', href: '/' },
   { title: 'Projects', href: '#' },
-  { title: 'About', href: '#' },
+  { title: 'About', href: '#about' },
   { title: 'Contact', href: '#' }
 ]
 
@@ -103,7 +113,98 @@ const App = () => {
             </section>
             <DuolingoWidget username="0dean" />
           </div>
+
+          <section id="about" className="mt-16 scroll-mt-16">
+            <div className="mb-6 flex items-center gap-3">
+              <User className="text-primary h-6 w-6" />
+              <h2 className="text-3xl font-bold">About Me</h2>
+            </div>
+
+            <div className="space-y-6">
+              <div>
+                <p className="text-lg leading-relaxed">
+                  I'm a Full-Stack Developer with over two years of experience
+                  in web development. I focus on building clean, efficient, and
+                  responsive applications while constantly improving my skills
+                  through real-world projects. I enjoy working in a team and
+                  tackling new challenges.
+                </p>
+                <p className="mt-4 text-lg leading-relaxed">
+                  My journey in development started in high school when I got
+                  into modding Minecraft, creating custom modifications and
+                  clients in Java. That early passion led me to software
+                  development, where I continue to explore and grow.
+                </p>
+              </div>
+
+              <div className="grid grid-cols-1 gap-4 pt-4 sm:grid-cols-2 md:grid-cols-3">
+                <div className="flex items-start gap-3">
+                  <Calendar className="text-muted-foreground mt-0.5 h-5 w-5" />
+                  <div>
+                    <h3 className="font-medium">Birthdate</h3>
+                    <p className="text-muted-foreground">30.06.2004</p>
+                  </div>
+                </div>
+                <div className="flex items-start gap-3">
+                  <MapPin className="text-muted-foreground mt-0.5 h-5 w-5" />
+                  <div>
+                    <h3 className="font-medium">Location</h3>
+                    <p className="text-muted-foreground">
+                      Kyiv region, Ukraine
+                    </p>
+                  </div>
+                </div>
+                <div className="flex items-start gap-3">
+                  <Languages className="text-muted-foreground mt-0.5 h-5 w-5 min-w-5" />
+                  <div>
+                    <h3 className="font-medium">Languages</h3>
+                    <p className="text-muted-foreground">
+                      Ukrainian (Native), Russian (Fluent), English (Beginner)
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
         </main>
+
+        <footer className="mt-16 border-t py-8">
+          <div className="px-4">
+            <div className="flex flex-col items-center justify-between gap-4 md:flex-row">
+              <div className="text-muted-foreground text-sm">
+                © {new Date().getFullYear()} 0dean. All rights reserved.
+              </div>
+              <div className="flex items-center space-x-4">
+                <Button variant="ghost" size="icon" asChild>
+                  <a
+                    href="https://github.com/0deans"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <Github className="h-5 w-5" />
+                    <span className="sr-only">GitHub</span>
+                  </a>
+                </Button>
+                <Button variant="ghost" size="icon" asChild>
+                  <a
+                    href="https://t.me/odean0"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <Send className="h-5 w-5" />
+                    <span className="sr-only">Telegram</span>
+                  </a>
+                </Button>
+                <Button variant="ghost" size="icon" asChild>
+                  <a href="mailto:denysstetsenko4@gmail.com">
+                    <Mail className="h-5 w-5" />
+                    <span className="sr-only">Email</span>
+                  </a>
+                </Button>
+              </div>
+            </div>
+          </div>
+        </footer>
       </div>
     </div>
   )

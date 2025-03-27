@@ -27,7 +27,12 @@ export function MobileNav({ items }: MobileNavProps) {
           <span className="sr-only">Toggle menu</span>
         </Button>
       </SheetTrigger>
-      <SheetContent side="left" className="w-[240px] sm:w-[300px]">
+      <SheetContent
+        side="left"
+        className="w-[240px] sm:w-[300px]"
+        // Issue: https://github.com/shadcn-ui/ui/issues/844 (anchor link scroll bug)
+        onCloseAutoFocus={(event) => event.preventDefault()}
+      >
         <SheetHeader>
           <SheetTitle>Navigation</SheetTitle>
         </SheetHeader>

@@ -45,7 +45,7 @@ const App = () => {
           <div className="dark absolute bottom-2 left-2 flex items-center sm:bottom-4 sm:left-4">
             <div className="relative">
               <Avatar className="size-20 sm:size-32">
-                <AvatarImage src="avatar.jpg" />
+                <AvatarImage src="avatar.jpg" alt="@0dean" />
                 <AvatarFallback className="text-4xl">D</AvatarFallback>
               </Avatar>
               <div className="pointer-events-none absolute inset-0 z-10">

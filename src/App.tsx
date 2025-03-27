@@ -9,6 +9,7 @@ import {
   Send,
   User
 } from 'lucide-react'
+import MediaQuery from 'react-responsive'
 import { DuolingoWidget } from './components/duolingo-widget'
 import { MobileNav } from './components/mobile-nav'
 import { ProfileInfo } from './components/profile-info'
@@ -51,11 +52,15 @@ const App = () => {
                 <img src="avatar-decoration.png" alt="Avatar decoration" />
               </div>
             </div>
-            <ProfileInfo className="hidden sm:block" />
+            <MediaQuery minWidth={640}>
+              <ProfileInfo />
+            </MediaQuery>
           </div>
         </header>
 
-        <ProfileInfo className="ml-0 sm:hidden" />
+        <MediaQuery maxWidth={640}>
+          <ProfileInfo className="ml-0" />
+        </MediaQuery>
 
         <div className="mt-4 flex items-center justify-between">
           <MobileNav items={navItems} />

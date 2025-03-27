@@ -18,6 +18,7 @@ export function DuolingoWidget({ username }: DuolingoWidgetProps) {
     return (
       <section className="rounded-md border border-red-600 bg-red-600/10">
         <div className="flex h-[180px] w-full flex-col items-center justify-center space-y-4">
+          <span className="font-mono font-semibold">Duolingo</span>
           <p className="text-muted-foreground">
             {error?.message || 'Something went wrong. Please try again.'}
           </p>

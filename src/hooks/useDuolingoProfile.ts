@@ -6,16 +6,17 @@ interface DuolingoData {
 }
 
 const fetchDuolingoProfile = async (username: string) => {
-  const url = new URL('https://www.duolingo.com/2017-06-30/users')
-  url.searchParams.set('username', username)
-
+  const baseUrl = 'https://api.allorigins.win/get?url='
+  const duolingoUrl = `https://www.duolingo.com/2017-06-30/users?username=${username}`
+  const url = `${baseUrl}${encodeURIComponent(duolingoUrl)}`
   const response = await fetch(url)
+
   if (!response.ok) {
     throw new Error('Failed to fetch Duolingo profile')
   }
 
   const data = await response.json()
-  const profile = data.users[0] as DuolingoData
+  const profile = JSON.parse(data.contents).users[0] as DuolingoData
 
   return profile
 }

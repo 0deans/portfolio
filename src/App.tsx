@@ -3,6 +3,7 @@ import {
   Calendar,
   Download,
   Github,
+  GraduationCap,
   Languages,
   Mail,
   MapPin,
@@ -23,6 +24,24 @@ const navItems = [
   { title: 'Projects', href: '#' },
   { title: 'About', href: '#about' },
   { title: 'Contact', href: '#' }
+]
+
+const education = [
+  {
+    degree: "Bachelor's Degree - Software Engineering",
+    institution: 'ISTU',
+    period: '9/2021 - present'
+  },
+  {
+    degree: 'High School (Complete Secondary Education)',
+    institution: '',
+    period: '9/2019 - 5/2021'
+  },
+  {
+    degree: 'Middle School (Basic Secondary Education)',
+    institution: '',
+    period: '9/2010 - 6/2019'
+  }
 ]
 
 const App = () => {
@@ -172,6 +191,35 @@ const App = () => {
                     </p>
                   </div>
                 </div>
+              </div>
+            </div>
+          </section>
+
+          <section id="education" className="mt-16 scroll-mt-16">
+            <div className="mb-6 flex items-center gap-3">
+              <GraduationCap className="text-primary h-6 w-6" />
+              <h2 className="text-3xl font-bold">Education</h2>
+            </div>
+
+            <div className="relative">
+              <div className="from-primary to-primary/20 absolute top-2 bottom-2 left-4 w-1 rounded-full bg-gradient-to-b"></div>
+              <div className="space-y-10 pb-12">
+                {education.map((edu, index) => (
+                  <div key={index} className="relative ml-8">
+                    <div className="bg-primary absolute -left-3.5 h-3.5 w-3.5 -translate-x-1/2 rounded-full"></div>
+                    <div className="flex flex-col">
+                      <span className="text-muted-foreground mb-1 text-sm">
+                        {edu.period}
+                      </span>
+                      <h3 className="text-lg font-medium">{edu.degree}</h3>
+                      {edu.institution && (
+                        <p className="text-muted-foreground">
+                          {edu.institution}
+                        </p>
+                      )}
+                    </div>
+                  </div>
+                ))}
               </div>
             </div>
           </section>

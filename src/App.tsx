@@ -128,17 +128,21 @@ const App = () => {
             <div className="space-y-6">
               <div>
                 <p className="text-lg leading-relaxed">
-                  I'm a Full-Stack Developer with over two years of experience
-                  in web development. I focus on building clean, efficient, and
-                  responsive applications while constantly improving my skills
-                  through real-world projects. I enjoy working in a team and
-                  tackling new challenges.
+                  I'm a <strong>Full-Stack Developer</strong> with over{' '}
+                  <strong>two years</strong> of experience in web development. I
+                  focus on building <strong>clean</strong>,{' '}
+                  <strong>efficient</strong>, and <strong>responsive</strong>{' '}
+                  applications while constantly improving my skills through
+                  real-world projects.{' '}
+                  <strong className="italic">I enjoy working in a team</strong>{' '}
+                  and taking new challenges.
                 </p>
                 <p className="mt-4 text-lg leading-relaxed">
                   My journey in development started in high school when I got
-                  into modding Minecraft, creating custom modifications and
-                  clients in Java. That early passion led me to software
-                  development, where I continue to explore and grow.
+                  into <strong>modding Minecraft</strong>, creating custom
+                  modifications and clients in <strong>Java</strong>. That early
+                  passion led me to software development, where I continue to
+                  explore and grow.
                 </p>
               </div>
 

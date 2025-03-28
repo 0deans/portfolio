@@ -1,6 +1,7 @@
 import {
   Briefcase,
   Calendar,
+  Code,
   Download,
   Github,
   GraduationCap,
@@ -23,6 +24,8 @@ const navItems = [
   { title: 'Home', href: '/' },
   { title: 'Projects', href: '#' },
   { title: 'About', href: '#about' },
+  { title: 'Skills', href: '#skills' },
+  { title: 'Education', href: '#education' },
   { title: 'Contact', href: '#' }
 ]
 
@@ -41,6 +44,33 @@ const education = [
     degree: 'Middle School (Basic Secondary Education)',
     institution: '',
     period: '9/2010 - 6/2019'
+  }
+]
+
+const skillCategories = [
+  {
+    name: 'Frontend',
+    skills: [
+      'JavaScript',
+      'TypeScript',
+      'React',
+      'Svelte',
+      'HTML',
+      'CSS',
+      'Tailwind CSS'
+    ]
+  },
+  {
+    name: 'Backend',
+    skills: ['Node.js', 'Hono.js', 'PostgreSQL', 'SQLite']
+  },
+  {
+    name: 'Mobile & Desktop',
+    skills: ['Tauri', 'Flutter']
+  },
+  {
+    name: 'Other',
+    skills: ['C#', 'Java', 'Git', 'Docker']
   }
 ]
 
@@ -84,7 +114,7 @@ const App = () => {
         <div className="mt-4 flex items-center justify-between">
           <MobileNav items={navItems} />
           <nav className="hidden sm:block">
-            <ul className="flex space-x-4">
+            <ul className="flex space-x-2">
               {navItems.map((item) => (
                 <li key={item.title}>
                   <Button variant="ghost" asChild>
@@ -144,7 +174,7 @@ const App = () => {
               <h2 className="text-3xl font-bold">About Me</h2>
             </div>
 
-            <div className="space-y-6">
+            <div className="space-y-8">
               <div>
                 <p className="text-lg leading-relaxed">
                   I'm a <strong>Full-Stack Developer</strong> with over{' '}
@@ -195,34 +225,61 @@ const App = () => {
             </div>
           </section>
 
-          <section id="education" className="mt-16 scroll-mt-16">
-            <div className="mb-6 flex items-center gap-3">
-              <GraduationCap className="text-primary h-6 w-6" />
-              <h2 className="text-3xl font-bold">Education</h2>
-            </div>
+          <div className="mt-16 grid scroll-mt-16 grid-cols-1 gap-16 md:grid-cols-2 md:gap-10">
+            <section id="skills">
+              <div className="mb-6 flex items-center gap-3">
+                <Code className="text-primary h-6 w-6" />
+                <h2 className="text-3xl font-bold">Skills</h2>
+              </div>
 
-            <div className="relative">
-              <div className="from-primary to-primary/20 absolute top-2 bottom-2 left-4 w-1 rounded-full bg-gradient-to-b"></div>
-              <div className="space-y-10 pb-12">
-                {education.map((edu, index) => (
-                  <div key={index} className="relative ml-8">
-                    <div className="bg-primary absolute -left-3.5 h-3.5 w-3.5 -translate-x-1/2 rounded-full"></div>
-                    <div className="flex flex-col">
-                      <span className="text-muted-foreground mb-1 text-sm">
-                        {edu.period}
-                      </span>
-                      <h3 className="text-lg font-medium">{edu.degree}</h3>
-                      {edu.institution && (
-                        <p className="text-muted-foreground">
-                          {edu.institution}
-                        </p>
-                      )}
-                    </div>
+              <div className="space-y-6">
+                {skillCategories.map((category) => (
+                  <div key={category.name}>
+                    <h3 className="text-lg font-medium">{category.name}</h3>
+                    <ul className="flex flex-wrap gap-2">
+                      {category.skills.map((skill) => (
+                        <li
+                          key={skill}
+                          className="text-muted-foreground bg-primary/5 rounded-md border px-3 py-1.5 text-sm"
+                        >
+                          {skill}
+                        </li>
+                      ))}
+                    </ul>
                   </div>
                 ))}
               </div>
-            </div>
-          </section>
+            </section>
+
+            <section id="education">
+              <div className="mb-6 flex items-center gap-3">
+                <GraduationCap className="text-primary h-6 w-6" />
+                <h2 className="text-3xl font-bold">Education</h2>
+              </div>
+
+              <div className="relative">
+                <div className="from-primary to-primary/20 absolute top-2 bottom-2 left-2 w-1 rounded-full bg-gradient-to-b"></div>
+                <div className="space-y-10 pb-12">
+                  {education.map((edu, index) => (
+                    <div key={index} className="relative ml-8">
+                      <div className="bg-primary absolute -left-5.5 h-3.5 w-3.5 -translate-x-1/2 rounded-full"></div>
+                      <div className="flex flex-col">
+                        <span className="text-muted-foreground mb-1 text-sm">
+                          {edu.period}
+                        </span>
+                        <h3 className="text-lg font-medium">{edu.degree}</h3>
+                        {edu.institution && (
+                          <p className="text-muted-foreground">
+                            {edu.institution}
+                          </p>
+                        )}
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </section>
+          </div>
         </main>
 
         <footer className="mt-16 border-t py-8">

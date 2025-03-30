@@ -15,6 +15,7 @@ import MediaQuery from 'react-responsive'
 import { DuolingoWidget } from './components/duolingo-widget'
 import { MobileNav } from './components/mobile-nav'
 import { ProfileInfo } from './components/profile-info'
+import { ProjectCard } from './components/project-card'
 import { ThemeListener } from './components/theme-listener'
 import { ThemeToggle } from './components/theme-toggle'
 import { Avatar, AvatarFallback, AvatarImage } from './components/ui/avatar'
@@ -22,7 +23,7 @@ import { Button } from './components/ui/button'
 
 const navItems = [
   { title: 'Home', href: '/' },
-  { title: 'Projects', href: '#' },
+  { title: 'Projects', href: '#projects' },
   { title: 'About', href: '#about' },
   { title: 'Skills', href: '#skills' },
   { title: 'Education', href: '#education' },
@@ -71,6 +72,63 @@ const skillCategories = [
   {
     name: 'Other',
     skills: ['C#', 'Java', 'Git', 'Docker']
+  }
+]
+
+const projects = [
+  {
+    title: 'SimpleFF',
+    description:
+      'A simple interface for FFmpeg built with Tauri/SvelteKit that allows users to select video files and reformat them with customizable codec options.',
+    link: 'https://github.com/0deans/SimpleFF',
+    tags: ['Tauri', 'SvelteKit', 'TypeScript', 'FFmpeg'],
+    images: [
+      '/projects/simpleff/preview1.png',
+      '/projects/simpleff/preview2.png',
+      '/projects/simpleff/preview3.png',
+      '/projects/simpleff/preview4.png'
+    ]
+  },
+  {
+    title: 'Climate Visualization Platform',
+    description:
+      'A collaborative project with a team of 2, where we developed a website featuring a map displaying temperature readings from multiple measuring stations, isolines, and the temperature gradient.',
+    link: 'https://climate.0dean.lol/',
+    tags: ['React', 'TypeScript', 'GIS', 'Data Visualization'],
+    images: [
+      '/projects/climate/preview1.png',
+      '/projects/climate/preview2.png',
+      '/projects/climate/preview3.png',
+      '/projects/climate/preview4.png'
+    ]
+  },
+  {
+    title: 'Food Composition Recognition App',
+    description:
+      'A mobile application for recognizing the composition of food (dishes) using image recognition technology.',
+    link: 'https://github.com/0deans/foodly',
+    tags: ['Flutter', 'Machine Learning', 'Mobile Development'],
+    images: [
+      '/projects/foodly/preview1.png',
+      '/projects/foodly/preview2.png',
+      '/projects/foodly/preview3.png',
+      '/projects/foodly/preview4.png',
+      '/projects/foodly/preview5.png',
+      '/projects/foodly/preview6.png',
+      '/projects/foodly/preview7.png'
+    ]
+  },
+  {
+    title: 'Vehicle License Plate Recognition',
+    description:
+      'A system for recognizing vehicle license plates for cars and other vehicles using computer vision techniques.',
+    link: 'https://github.com/0deans',
+    tags: ['Computer Vision', 'Python', 'Machine Learning'],
+    images: [
+      '/projects/license-plate/preview1.png',
+      '/projects/license-plate/preview2.png',
+      '/projects/license-plate/preview3.png'
+    ]
   }
 ]
 
@@ -167,6 +225,26 @@ const App = () => {
             </section>
             <DuolingoWidget username="0dean" />
           </div>
+
+          <section id="projects" className="mt-16 scroll-mt-16">
+            <div className="mb-6 flex items-center gap-3">
+              <Briefcase className="text-primary h-6 w-6" />
+              <h2 className="text-3xl font-bold">Projects</h2>
+            </div>
+
+            <div className="grid grid-cols-1 gap-8 sm:grid-cols-2">
+              {projects.map((project, index) => (
+                <ProjectCard
+                  key={index}
+                  title={project.title}
+                  description={project.description}
+                  tags={project.tags}
+                  link={project.link}
+                  images={project.images}
+                />
+              ))}
+            </div>
+          </section>
 
           <section id="about" className="mt-16 scroll-mt-16">
             <div className="mb-6 flex items-center gap-3">

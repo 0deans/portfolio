@@ -122,7 +122,7 @@ const projects = [
     title: 'Vehicle License Plate Recognition',
     description:
       'A system for recognizing vehicle license plates for cars and other vehicles using computer vision techniques.',
-    link: 'https://github.com/0deans',
+    link: 'https://github.com/0deans/Car-Plate-Recognition',
     tags: ['Computer Vision', 'Python', 'Machine Learning'],
     images: [
       '/projects/license-plate/preview1.png',

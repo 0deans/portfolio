@@ -42,6 +42,13 @@ export function ImageModal({
   return (
     <Dialog open={isOpen} onOpenChange={onClose}>
       <DialogContent className="flex size-full min-w-full flex-col rounded-none border-none p-14">
+        <div
+          className="absolute inset-0 scale-125 bg-cover bg-center blur-lg brightness-30"
+          style={{
+            backgroundImage: `url(${images[current - 1]})`
+          }}
+        ></div>
+
         <div className="flex h-full flex-1 items-center justify-center">
           <Carousel
             setApi={setApi}

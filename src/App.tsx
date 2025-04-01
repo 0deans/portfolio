@@ -3,6 +3,7 @@ import {
   Calendar,
   Code,
   Download,
+  ExternalLink,
   Github,
   GraduationCap,
   Languages,
@@ -13,7 +14,6 @@ import {
   User
 } from 'lucide-react'
 import MediaQuery from 'react-responsive'
-import { CopyableText } from './components/copyable-text'
 import { DuolingoWidget } from './components/duolingo-widget'
 import { MobileNav } from './components/mobile-nav'
 import { ProfileInfo } from './components/profile-info'
@@ -149,13 +149,13 @@ const contactInfo = [
   },
   {
     platform: 'Discord',
-    value: '0dean',
+    value: '@0dean',
     icon: MessageSquare,
-    link: 'https://discord.com/users/0dean'
+    link: 'https://discord.gg/WVJPUTSu'
   },
   {
     platform: 'GitHub',
-    value: '0deans',
+    value: '@0deans',
     icon: Github,
     link: 'https://github.com/0deans'
   }
@@ -396,37 +396,25 @@ const App = () => {
 
             <div className="mt-4 grid grid-cols-1 gap-4 sm:grid-cols-2">
               {contactInfo.map((contact, index) => (
-                <div
+                <a
                   key={index}
+                  href={contact.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="border-primary/20 bg-primary/5 hover:bg-primary/10 group relative flex items-center rounded-md border p-4 transition-colors"
                 >
                   <div className="bg-primary/10 group-hover:bg-primary/20 mr-4 rounded-full p-3 transition-colors">
                     <contact.icon className="h-6 w-6 text-white" />
                   </div>
 
-                  <div className="flex-1 truncate">
+                  <div className="flex-1 break-all">
                     <h3 className="text-lg font-medium">{contact.platform}</h3>
-                    <CopyableText
-                      text={contact.value}
-                      className="p-0 hover:underline"
-                    />
+                    <p className="text-muted-foreground text-sm">
+                      {contact.value}
+                    </p>
                   </div>
-
-                  <Button
-                    variant="ghost"
-                    size="sm"
-                    className="absolute right-4 bg-blue-500/20 opacity-0 transition-opacity group-hover:opacity-100 hover:bg-blue-500/30 dark:hover:bg-blue-500/30"
-                    asChild
-                  >
-                    <a
-                      href={contact.link}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      Open
-                    </a>
-                  </Button>
-                </div>
+                  <ExternalLink className="text-muted-foreground absolute top-4 right-4 h-4 w-4 opacity-100 transition-opacity group-hover:opacity-100 md:top-1/2 md:-translate-y-1/2 md:opacity-0" />
+                </a>
               ))}
             </div>
           </section>

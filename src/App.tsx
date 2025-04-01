@@ -8,10 +8,12 @@ import {
   Languages,
   Mail,
   MapPin,
+  MessageSquare,
   Send,
   User
 } from 'lucide-react'
 import MediaQuery from 'react-responsive'
+import { CopyableText } from './components/copyable-text'
 import { DuolingoWidget } from './components/duolingo-widget'
 import { MobileNav } from './components/mobile-nav'
 import { ProfileInfo } from './components/profile-info'
@@ -27,7 +29,7 @@ const navItems = [
   { title: 'About', href: '#about' },
   { title: 'Skills', href: '#skills' },
   { title: 'Education', href: '#education' },
-  { title: 'Contact', href: '#' }
+  { title: 'Contact', href: '#contact' }
 ]
 
 const education = [
@@ -132,6 +134,33 @@ const projects = [
   }
 ]
 
+const contactInfo = [
+  {
+    platform: 'Email',
+    value: 'denysstetsenko4@gmail.com',
+    icon: Mail,
+    link: 'mailto:denysstetsenko4@gmail.com'
+  },
+  {
+    platform: 'Telegram',
+    value: '@odean0',
+    icon: Send,
+    link: 'https://t.me/odean0'
+  },
+  {
+    platform: 'Discord',
+    value: '0dean',
+    icon: MessageSquare,
+    link: 'https://discord.com/users/0dean'
+  },
+  {
+    platform: 'GitHub',
+    value: '0deans',
+    icon: Github,
+    link: 'https://github.com/0deans'
+  }
+]
+
 const App = () => {
   return (
     <div className="noise-bg flex min-h-screen flex-col items-center p-4">
@@ -215,8 +244,8 @@ const App = () => {
                     className="flex-1 gap-1"
                     asChild
                   >
-                    <a href="mailto:denysstetsenko4@gmail.com">
-                      <Mail className="h-3 w-3" />
+                    <a href="#contact">
+                      <Send className="h-3 w-3" />
                       Contact
                     </a>
                   </Button>
@@ -358,6 +387,49 @@ const App = () => {
               </div>
             </section>
           </div>
+
+          <section id="contact" className="mt-16 scroll-mt-16">
+            <div className="mb-6 flex items-center gap-3">
+              <Send className="text-primary h-6 w-6" />
+              <h2 className="text-3xl font-bold">Contact</h2>
+            </div>
+
+            <div className="mt-4 grid grid-cols-1 gap-4 sm:grid-cols-2">
+              {contactInfo.map((contact, index) => (
+                <div
+                  key={index}
+                  className="border-primary/20 bg-primary/5 hover:bg-primary/10 group relative flex items-center rounded-md border p-4 transition-colors"
+                >
+                  <div className="bg-primary/10 group-hover:bg-primary/20 mr-4 rounded-full p-3 transition-colors">
+                    <contact.icon className="h-6 w-6 text-white" />
+                  </div>
+
+                  <div className="flex-1 truncate">
+                    <h3 className="text-lg font-medium">{contact.platform}</h3>
+                    <CopyableText
+                      text={contact.value}
+                      className="p-0 hover:underline"
+                    />
+                  </div>
+
+                  <Button
+                    variant="ghost"
+                    size="sm"
+                    className="absolute right-4 bg-blue-500/20 opacity-0 transition-opacity group-hover:opacity-100 hover:bg-blue-500/30 dark:hover:bg-blue-500/30"
+                    asChild
+                  >
+                    <a
+                      href={contact.link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      Open
+                    </a>
+                  </Button>
+                </div>
+              ))}
+            </div>
+          </section>
         </main>
 
         <footer className="mt-16 border-t py-8">

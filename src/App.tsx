@@ -14,7 +14,9 @@ import {
   User
 } from 'lucide-react'
 import MediaQuery from 'react-responsive'
+import BannerImgMeta from './assets/banner.jpg?w=400;800;1200&format=webp;avif;png&as=picture'
 import { DuolingoWidget } from './components/duolingo-widget'
+import { Image } from './components/image'
 import { MobileNav } from './components/mobile-nav'
 import { ProfileInfo } from './components/profile-info'
 import { ProjectCard } from './components/project-card'
@@ -168,13 +170,10 @@ const App = () => {
       <div className="w-full max-w-4xl">
         <header className="relative">
           <div className="relative w-full overflow-hidden rounded-md">
-            <img
-              src="banner.jpg"
+            <Image
+              meta={BannerImgMeta}
               alt="Profile banner"
-              width="1200"
-              height="600"
-              loading="lazy"
-              className="bg-secondary aspect-[16/5] max-h-72 w-full object-cover shadow-sm sm:aspect-auto"
+              imageClass="bg-secondary aspect-[16/5] max-h-72 w-full object-cover shadow-sm sm:aspect-auto"
             />
           </div>
 

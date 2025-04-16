@@ -74,7 +74,7 @@ export function ImageModal({
           </Carousel>
         </div>
         <DialogFooter>
-          <div className="text-muted-foreground mx-auto text-sm">
+          <div className="text-muted-foreground z-10 mx-auto text-sm">
             Image {current} of {count}
           </div>
         </DialogFooter>

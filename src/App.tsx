@@ -1,20 +1,19 @@
+import { SiDiscord, SiGithub, SiTelegram } from '@icons-pack/react-simple-icons'
 import {
   Briefcase,
   Calendar,
   Code,
   Download,
   ExternalLink,
-  Github,
   GraduationCap,
   Languages,
   Mail,
   MapPin,
-  MessageSquare,
   Send,
   User
 } from 'lucide-react'
 import MediaQuery from 'react-responsive'
-import BannerImgMeta from './assets/banner.jpg?w=400;800;1200&format=webp;avif;png&as=picture'
+import BannerImgMeta from './assets/banner.jpg?w=400;800&format=webp;avif;png&as=picture'
 import { DuolingoWidget } from './components/duolingo-widget'
 import { Image } from './components/image'
 import { MobileNav } from './components/mobile-nav'
@@ -146,19 +145,19 @@ const contactInfo = [
   {
     platform: 'Telegram',
     value: '@odean0',
-    icon: Send,
+    icon: SiTelegram,
     link: 'https://t.me/odean0'
   },
   {
     platform: 'Discord',
     value: '@0dean',
-    icon: MessageSquare,
+    icon: SiDiscord,
     link: 'https://discord.gg/WVJPUTSu'
   },
   {
     platform: 'GitHub',
     value: '@0deans',
-    icon: Github,
+    icon: SiGithub,
     link: 'https://github.com/0deans'
   }
 ]
@@ -432,7 +431,7 @@ const App = () => {
                     target="_blank"
                     rel="noopener noreferrer"
                   >
-                    <Github className="h-5 w-5" />
+                    <SiGithub className="h-5 w-5" />
                     <span className="sr-only">GitHub</span>
                   </a>
                 </Button>
@@ -442,8 +441,18 @@ const App = () => {
                     target="_blank"
                     rel="noopener noreferrer"
                   >
-                    <Send className="h-5 w-5" />
+                    <SiTelegram className="h-5 w-5" />
                     <span className="sr-only">Telegram</span>
+                  </a>
+                </Button>
+                <Button variant="ghost" size="icon" asChild>
+                  <a
+                    href="https://discord.gg/WVJPUTSu"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <SiDiscord className="h-5 w-5" />
+                    <span className="sr-only">Discord</span>
                   </a>
                 </Button>
                 <Button variant="ghost" size="icon" asChild>

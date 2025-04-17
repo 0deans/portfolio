@@ -1,5 +1,7 @@
 import { ExternalLink, ImageIcon } from 'lucide-react'
 import { useState } from 'react'
+import { ImgMeta } from '@/types/image'
+import { Image } from './image'
 import { ImageModal } from './image-model'
 import { Badge } from './ui/badge'
 import { ScrollArea, ScrollBar } from './ui/scroll-area'
@@ -9,7 +11,10 @@ interface ProjectCardProps {
   link: string
   description: string
   tags: string[]
-  images: string[]
+  images: {
+    thumb: ImgMeta
+    full: string
+  }[]
 }
 
 export function ProjectCard({
@@ -55,13 +60,13 @@ export function ProjectCard({
             {images.map((image, index) => (
               <button
                 key={index}
-                className="group relative h-20 w-24 shrink-0 cursor-pointer overflow-hidden rounded-sm"
+                className="group bg-secondary relative h-20 w-24 shrink-0 cursor-pointer overflow-hidden rounded-sm"
                 onClick={() => openModal(index)}
               >
-                <img
-                  src={image}
+                <Image
+                  meta={image.thumb}
                   alt={`${title} - image ${index + 1}`}
-                  className="size-full object-cover transition-transform group-hover:scale-105"
+                  imageClass="size-full object-cover transition-transform group-hover:scale-105"
                 />
                 <div className="absolute inset-0 flex items-center justify-center bg-black/50 opacity-0 transition-opacity group-hover:opacity-100">
                   <ImageIcon className="h-6 w-6 text-white" />
@@ -74,7 +79,7 @@ export function ProjectCard({
       </div>
 
       <ImageModal
-        images={images}
+        images={images.map((image) => image.full)}
         alt={title}
         isOpen={isImageModalOpen}
         onClose={() => setIsImageModalOpen(false)}

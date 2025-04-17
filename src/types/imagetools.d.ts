@@ -1,14 +1,6 @@
 declare module '*&as=picture' {
-  const picture: {
-    img: {
-      src: string
-      w: number
-      h: number
-    }
-    sources: {
-      [key: string]: string // srcset string, e.g., "img-50w.webp 50w, img-100w.webp 100w"
-    }
-  }
+  import type { ImgMeta } from './image'
 
+  const picture: ImgMeta
   export default picture
 }

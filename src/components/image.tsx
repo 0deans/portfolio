@@ -1,16 +1,5 @@
 import { FC } from 'react'
-
-type ImgProps = {
-  src: string
-  w: number
-}
-
-type ImgPropsH = ImgProps & { h: number }
-
-export type ImgMeta = {
-  img: ImgPropsH
-  sources: { [key: string]: string }
-}
+import { ImgMeta, ImgProps } from '@/types/image'
 
 type ImageProps = {
   meta: ImgMeta | ImgMeta[]

@@ -23,6 +23,7 @@ import { ThemeListener } from './components/theme-listener'
 import { ThemeToggle } from './components/theme-toggle'
 import { Avatar, AvatarFallback, AvatarImage } from './components/ui/avatar'
 import { Button } from './components/ui/button'
+import { contactInfo, education, projects, skillCategories } from './constants'
 
 const navItems = [
   { title: 'Home', href: '/' },
@@ -31,135 +32,6 @@ const navItems = [
   { title: 'Skills', href: '#skills' },
   { title: 'Education', href: '#education' },
   { title: 'Contact', href: '#contact' }
-]
-
-const education = [
-  {
-    degree: "Bachelor's Degree - Software Engineering",
-    institution: 'ISTU',
-    period: '9/2021 - present'
-  },
-  {
-    degree: 'High School (Complete Secondary Education)',
-    institution: '',
-    period: '9/2019 - 5/2021'
-  },
-  {
-    degree: 'Middle School (Basic Secondary Education)',
-    institution: '',
-    period: '9/2010 - 6/2019'
-  }
-]
-
-const skillCategories = [
-  {
-    name: 'Frontend',
-    skills: [
-      'JavaScript',
-      'TypeScript',
-      'React',
-      'Svelte',
-      'HTML',
-      'CSS',
-      'Tailwind CSS'
-    ]
-  },
-  {
-    name: 'Backend',
-    skills: ['Node.js', 'Hono.js', 'PostgreSQL', 'SQLite']
-  },
-  {
-    name: 'Mobile & Desktop',
-    skills: ['Tauri', 'Flutter']
-  },
-  {
-    name: 'Other',
-    skills: ['C#', 'Java', 'Git', 'Docker']
-  }
-]
-
-const projects = [
-  {
-    title: 'SimpleFF',
-    description:
-      'A simple interface for FFmpeg built with Tauri/SvelteKit that allows users to select video files and reformat them with customizable codec options.',
-    link: 'https://github.com/0deans/SimpleFF',
-    tags: ['Tauri', 'SvelteKit', 'TypeScript', 'FFmpeg'],
-    images: [
-      '/projects/simpleff/preview1.png',
-      '/projects/simpleff/preview2.png',
-      '/projects/simpleff/preview3.png',
-      '/projects/simpleff/preview4.png'
-    ]
-  },
-  {
-    title: 'Climate Visualization Platform',
-    description:
-      'A collaborative project with a team of 2, where we developed a website featuring a map displaying temperature readings from multiple measuring stations, isolines, and the temperature gradient.',
-    link: 'https://climate.0dean.lol/',
-    tags: ['React', 'TypeScript', 'GIS', 'Data Visualization'],
-    images: [
-      '/projects/climate/preview1.png',
-      '/projects/climate/preview2.png',
-      '/projects/climate/preview3.png',
-      '/projects/climate/preview4.png'
-    ]
-  },
-  {
-    title: 'Food Composition Recognition App',
-    description:
-      'A mobile application for recognizing the composition of food (dishes) using image recognition technology.',
-    link: 'https://github.com/0deans/foodly',
-    tags: ['Flutter', 'Machine Learning', 'Mobile Development'],
-    images: [
-      '/projects/foodly/preview1.png',
-      '/projects/foodly/preview2.png',
-      '/projects/foodly/preview3.png',
-      '/projects/foodly/preview4.png',
-      '/projects/foodly/preview5.png',
-      '/projects/foodly/preview6.png',
-      '/projects/foodly/preview7.png'
-    ]
-  },
-  {
-    title: 'Vehicle License Plate Recognition',
-    description:
-      'A system for recognizing vehicle license plates for cars and other vehicles using computer vision techniques.',
-    link: 'https://github.com/0deans/Car-Plate-Recognition',
-    tags: ['Computer Vision', 'Python', 'Machine Learning'],
-    images: [
-      '/projects/license-plate/preview1.png',
-      '/projects/license-plate/preview2.png',
-      '/projects/license-plate/preview3.png'
-    ]
-  }
-]
-
-const contactInfo = [
-  {
-    platform: 'Email',
-    value: 'denysstetsenko4@gmail.com',
-    icon: Mail,
-    link: 'mailto:denysstetsenko4@gmail.com'
-  },
-  {
-    platform: 'Telegram',
-    value: '@odean0',
-    icon: SiTelegram,
-    link: 'https://t.me/odean0'
-  },
-  {
-    platform: 'Discord',
-    value: '@0dean',
-    icon: SiDiscord,
-    link: 'https://discord.gg/WVJPUTSu'
-  },
-  {
-    platform: 'GitHub',
-    value: '@0deans',
-    icon: SiGithub,
-    link: 'https://github.com/0deans'
-  }
 ]
 
 const App = () => {
@@ -260,16 +132,18 @@ const App = () => {
             </div>
 
             <div className="grid grid-cols-1 gap-8 sm:grid-cols-2">
-              {projects.map((project, index) => (
-                <ProjectCard
-                  key={index}
-                  title={project.title}
-                  description={project.description}
-                  tags={project.tags}
-                  link={project.link}
-                  images={project.images}
-                />
-              ))}
+              {projects.map((project, index) => {
+                return (
+                  <ProjectCard
+                    key={index}
+                    title={project.title}
+                    description={project.description}
+                    tags={project.tags}
+                    link={project.link}
+                    images={project.images}
+                  />
+                )
+              })}
             </div>
           </section>
 

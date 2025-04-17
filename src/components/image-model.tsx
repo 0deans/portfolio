@@ -7,7 +7,12 @@ import {
   CarouselNext,
   CarouselPrevious
 } from './ui/carousel'
-import { Dialog, DialogContent, DialogFooter } from './ui/dialog'
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogTitle
+} from './ui/dialog'
 
 interface ImageModalProps {
   images: string[]
@@ -49,11 +54,13 @@ export function ImageModal({
           }}
         ></div>
 
+        <DialogTitle className="z-10 mx-auto">{alt}</DialogTitle>
+
         <div className="flex h-full flex-1 items-center justify-center">
           <Carousel
             setApi={setApi}
             opts={{ startIndex: initialIndex }}
-            className="h-full"
+            className="h-full max-h-[calc(100vh-12rem)]"
           >
             <CarouselContent className="h-full max-h-full">
               {images.map((image, index) => (
@@ -64,6 +71,7 @@ export function ImageModal({
                   <img
                     src={image}
                     alt={`${alt} - image ${current} of ${images.length}`}
+                    loading="lazy"
                     className="max-h-full object-contain"
                   />
                 </CarouselItem>
@@ -73,11 +81,11 @@ export function ImageModal({
             <CarouselNext />
           </Carousel>
         </div>
-        <DialogFooter>
+        <DialogDescription asChild>
           <div className="text-muted-foreground z-10 mx-auto text-sm">
             Image {current} of {count}
           </div>
-        </DialogFooter>
+        </DialogDescription>
       </DialogContent>
     </Dialog>
   )

@@ -40,11 +40,11 @@ const App = () => {
       <ThemeListener />
       <div className="w-full max-w-4xl">
         <header className="relative">
-          <div className="relative w-full overflow-hidden rounded-md">
+          <div className="bg-secondary relative aspect-[16/5] max-h-72 w-full overflow-hidden rounded-md shadow-sm">
             <Image
               meta={BannerImgMeta}
               alt="Profile banner"
-              imageClass="bg-secondary aspect-[16/5] max-h-72 w-full object-cover shadow-sm sm:aspect-auto"
+              imageClass="w-full object-cover"
             />
           </div>
 

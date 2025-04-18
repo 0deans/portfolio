@@ -12,16 +12,16 @@ import {
   Send,
   User
 } from 'lucide-react'
-import MediaQuery from 'react-responsive'
 import BannerImgMeta from './assets/banner.jpg?w=400;800&format=webp;avif;png&as=picture'
+import { CopyableText } from './components/copyable-text'
 import { DuolingoWidget } from './components/duolingo-widget'
 import { Image } from './components/image'
 import { MobileNav } from './components/mobile-nav'
-import { ProfileInfo } from './components/profile-info'
 import { ProjectCard } from './components/project-card'
 import { ThemeListener } from './components/theme-listener'
 import { ThemeToggle } from './components/theme-toggle'
 import { Avatar, AvatarFallback, AvatarImage } from './components/ui/avatar'
+import { Badge } from './components/ui/badge'
 import { Button } from './components/ui/button'
 import { contactInfo, education, projects, skillCategories } from './constants'
 
@@ -36,39 +36,45 @@ const navItems = [
 
 const App = () => {
   return (
-    <div className="noise-bg flex min-h-screen flex-col items-center p-4">
+    <div className="noise-bg flex min-h-screen flex-col items-center">
       <ThemeListener />
-      <div className="w-full max-w-4xl">
-        <header className="relative">
-          <div className="bg-secondary relative aspect-[16/5] max-h-72 w-full overflow-hidden rounded-md shadow-sm">
-            <Image
-              meta={BannerImgMeta}
-              alt="Profile banner"
-              imageClass="w-full object-cover"
-            />
-          </div>
 
-          <div className="dark absolute bottom-2 left-2 flex items-center sm:bottom-4 sm:left-4">
-            <div className="relative">
-              <Avatar className="size-20 sm:size-32">
-                <AvatarImage src="avatar.jpg" alt="@0dean" />
-                <AvatarFallback className="text-4xl">D</AvatarFallback>
-              </Avatar>
-              <div className="pointer-events-none absolute inset-0 z-10">
-                <img src="avatar-decoration.png" alt="Avatar decoration" />
-              </div>
+      <header className="dark relative w-full pb-4 md:max-w-4xl md:p-4">
+        <div className="bg-secondary aspect-[16/5] w-full overflow-hidden shadow-sm md:rounded-md">
+          <Image
+            meta={BannerImgMeta}
+            alt="Profile banner"
+            imageClass="w-full object-cover"
+          />
+        </div>
+
+        <div className="absolute bottom-6 left-2 flex items-center md:bottom-8 md:left-8">
+          <div className="relative">
+            <Avatar className="size-20 sm:size-32">
+              <AvatarImage src="avatar.jpg" alt="@0dean" />
+              <AvatarFallback className="text-4xl">D</AvatarFallback>
+            </Avatar>
+            <div className="pointer-events-none absolute inset-0 z-10">
+              <img src="avatar-decoration.png" alt="Avatar decoration" />
             </div>
-            <MediaQuery minWidth={640}>
-              <ProfileInfo />
-            </MediaQuery>
           </div>
-        </header>
+          <div className="ml-4">
+            <h1 className="text-foreground text-xl font-bold">Denys</h1>
+            <CopyableText
+              text="@0dean"
+              delayDuration={1000}
+              className="text-muted-foreground -mx-1.5 font-semibold transition-all hover:mx-0"
+            />
+            <div className="space-x-1">
+              <Badge variant="outline">he/him</Badge>
+              <Badge variant="outline">20yo</Badge>
+            </div>
+          </div>
+        </div>
+      </header>
 
-        <MediaQuery maxWidth={640}>
-          <ProfileInfo className="ml-0" />
-        </MediaQuery>
-
-        <div className="mt-4 flex items-center justify-between">
+      <div className="w-full max-w-4xl p-4 pt-0">
+        <div className="flex items-center justify-between">
           <MobileNav items={navItems} />
           <nav className="hidden sm:block">
             <ul className="flex space-x-2">
@@ -84,7 +90,7 @@ const App = () => {
           <ThemeToggle />
         </div>
 
-        <main className="mt-12">
+        <main className="mt-8">
           <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
             <section className="relative flex rounded-md border border-green-500">
               <div className="flex items-center justify-center bg-green-500/10 p-4">

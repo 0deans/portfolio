@@ -54,7 +54,9 @@ export function ImageModal({
           }}
         ></div>
 
-        <DialogTitle className="z-10 mx-auto">{alt}</DialogTitle>
+        <DialogTitle className="z-10 mx-auto text-center text-white mix-blend-difference">
+          {alt}
+        </DialogTitle>
 
         <div className="flex h-full flex-1 items-center justify-center">
           <Carousel

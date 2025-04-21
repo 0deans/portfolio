@@ -62,7 +62,7 @@ export function ImageModal({
           <Carousel
             setApi={setApi}
             opts={{ startIndex: initialIndex }}
-            className="h-full max-h-[calc(100vh-12rem)]"
+            className="h-full max-h-[calc(100vh-12rem)] w-full"
           >
             <CarouselContent className="h-full max-h-full">
               {images.map((image, index) => (

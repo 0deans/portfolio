@@ -1,50 +1,36 @@
-# React + TypeScript + Vite
+# 0dean's Portfolio Website
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+[![Live Demo](https://img.shields.io/badge/Live_Demo-0dean.me-brightgreen?style=flat-square)](https://0dean.me/)
+[![GitHub Repo](https://img.shields.io/badge/GitHub-Repository-blue?style=flat-square&logo=github)](https://github.com/0deans/portfolio)
 
-Currently, two official plugins are available:
+This repository contains the source code for my personal portfolio website, built to showcase my projects, skills, and experience as a Full-Stack Developer.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🛠️ Getting Started
 
-## Expanding the ESLint configuration
+Follow these steps to set up the project locally:
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+**Prerequisites:**
 
-- Configure the top-level `parserOptions` property like this:
+- [Node.js](https://nodejs.org/) (LTS version recommended)
+- [pnpm](https://pnpm.io/installation)
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname
-    }
-  }
-})
-```
+**Installation & Running:**
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+1.  **Clone the repository:**
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
+    ```bash
+    git clone https://github.com/0deans/portfolio.git
+    cd portfolio
+    ```
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules
-  }
-})
-```
+2.  **Install dependencies:**
+
+    ```bash
+    pnpm install
+    ```
+
+3.  **Run the development server:**
+    ```bash
+    pnpm dev
+    ```
+    The application should now be running on `http://localhost:5173` (or another port if 5173 is busy).

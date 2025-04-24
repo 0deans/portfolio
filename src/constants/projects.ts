@@ -26,7 +26,15 @@ const getProjectImages = (
   }))
 }
 
-export const projects = [
+export type Project = {
+  title: string
+  description: string
+  link: string
+  tags: string[]
+  images: { thumb: ImgMeta; full: string }[]
+}
+
+export const projects: Project[] = [
   {
     title: 'SimpleFF',
     description:

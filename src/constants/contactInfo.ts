@@ -1,7 +1,19 @@
-import { SiDiscord, SiGithub, SiTelegram } from '@icons-pack/react-simple-icons'
-import { Mail } from 'lucide-react'
+import {
+  IconType,
+  SiDiscord,
+  SiGithub,
+  SiTelegram
+} from '@icons-pack/react-simple-icons'
+import { LucideIcon, Mail } from 'lucide-react'
 
-export const contactInfo = [
+export interface ContactInfo {
+  platform: string
+  value: string
+  icon: LucideIcon | IconType
+  link: string
+}
+
+export const contactInfo: ContactInfo[] = [
   {
     platform: 'Email',
     value: 'denysstetsenko4@gmail.com',

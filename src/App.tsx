@@ -1,16 +1,14 @@
 import { SiDiscord, SiGithub, SiTelegram } from '@icons-pack/react-simple-icons'
 import {
   Briefcase,
-  Calendar,
   Code,
   ExternalLink,
   GraduationCap,
-  Languages,
   Mail,
-  MapPin,
   Send,
   User
 } from 'lucide-react'
+import { motion } from 'motion/react'
 import BannerImgMeta from './assets/banner.jpg?w=400;800&format=webp;avif;png&as=picture'
 import { CopyableText } from './components/copyable-text'
 import { DuolingoWidget } from './components/duolingo-widget'
@@ -22,7 +20,13 @@ import { ThemeToggle } from './components/theme-toggle'
 import { Avatar, AvatarFallback, AvatarImage } from './components/ui/avatar'
 import { Badge } from './components/ui/badge'
 import { Button } from './components/ui/button'
-import { contactInfo, education, projects, skillCategories } from './constants'
+import {
+  aboutDetails,
+  contactInfo,
+  education,
+  projects,
+  skillCategories
+} from './constants'
 
 const navItems = [
   { title: 'Home', href: '/' },
@@ -90,7 +94,16 @@ const App = () => {
         </div>
 
         <main className="mt-8">
-          <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
+          <motion.div
+            variants={{
+              hidden: { opacity: 0, y: 30 },
+              visible: { opacity: 1, y: 0 }
+            }}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: false, amount: 0.2 }}
+            className="grid grid-cols-1 gap-6 sm:grid-cols-2"
+          >
             <section className="noise-bg flex h-full flex-col rounded-md border border-zinc-200 bg-white p-4 dark:border-zinc-700 dark:bg-zinc-800/30">
               <div className="mb-2 flex items-center gap-3">
                 <Briefcase className="text-primary size-6 flex-shrink-0" />{' '}
@@ -116,35 +129,64 @@ const App = () => {
               </div>
             </section>
             <DuolingoWidget username="0dean" />
-          </div>
+          </motion.div>
 
           <section id="projects" className="mt-16 scroll-mt-16">
-            <div className="mb-6 flex items-center gap-3">
+            <motion.div
+              variants={{
+                hidden: { opacity: 0, x: -30 },
+                visible: { opacity: 1, x: 0 }
+              }}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: false, amount: 0.2 }}
+              className="mb-6 flex items-center gap-3"
+            >
               <Briefcase className="text-primary h-6 w-6" />
               <h2 className="text-3xl font-bold">Projects</h2>
-            </div>
+            </motion.div>
 
             <div className="grid grid-cols-1 gap-8 sm:grid-cols-2">
               {projects.map((project, index) => {
                 return (
-                  <ProjectCard
+                  <motion.div
                     key={index}
-                    title={project.title}
-                    description={project.description}
-                    tags={project.tags}
-                    link={project.link}
-                    images={project.images}
-                  />
+                    variants={{
+                      hidden: { opacity: 0, y: 30 },
+                      visible: { opacity: 1, y: 0 }
+                    }}
+                    initial="hidden"
+                    whileInView="visible"
+                    viewport={{ once: false, amount: 0.2 }}
+                    transition={{ delay: index * 0.1 }}
+                  >
+                    <ProjectCard
+                      title={project.title}
+                      description={project.description}
+                      tags={project.tags}
+                      link={project.link}
+                      images={project.images}
+                    />
+                  </motion.div>
                 )
               })}
             </div>
           </section>
 
           <section id="about" className="mt-16 scroll-mt-16">
-            <div className="mb-6 flex items-center gap-3">
+            <motion.div
+              variants={{
+                hidden: { opacity: 0, x: -30 },
+                visible: { opacity: 1, x: 0 }
+              }}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: false, amount: 0.2 }}
+              className="mb-6 flex items-center gap-3"
+            >
               <User className="text-primary h-6 w-6" />
               <h2 className="text-3xl font-bold">About Me</h2>
-            </div>
+            </motion.div>
 
             <div className="space-y-8">
               <div>
@@ -168,54 +210,66 @@ const App = () => {
               </div>
 
               <div className="grid grid-cols-1 gap-4 pt-4 sm:grid-cols-2 md:grid-cols-3">
-                <div className="flex items-start gap-3">
-                  <Calendar className="text-muted-foreground mt-0.5 h-5 w-5" />
-                  <div>
-                    <h3 className="font-medium">Birthdate</h3>
-                    <p className="text-muted-foreground">30.06.2004</p>
-                  </div>
-                </div>
-                <div className="flex items-start gap-3">
-                  <MapPin className="text-muted-foreground mt-0.5 h-5 w-5" />
-                  <div>
-                    <h3 className="font-medium">Location</h3>
-                    <p className="text-muted-foreground">
-                      Kyiv region, Ukraine
-                    </p>
-                  </div>
-                </div>
-                <div className="flex items-start gap-3">
-                  <Languages className="text-muted-foreground mt-0.5 h-5 w-5 min-w-5" />
-                  <div>
-                    <h3 className="font-medium">Languages</h3>
-                    <p className="text-muted-foreground">
-                      Ukrainian (Native), Russian (Fluent), English (Beginner)
-                    </p>
-                  </div>
-                </div>
+                {aboutDetails.map((detail, index) => (
+                  <motion.div
+                    key={index}
+                    variants={{
+                      hidden: { opacity: 0, y: 30 },
+                      visible: { opacity: 1, y: 0 }
+                    }}
+                    initial="hidden"
+                    whileInView="visible"
+                    viewport={{ once: false, amount: 0.2 }}
+                    transition={{ delay: index * 0.1 }}
+                    className="flex items-start gap-3"
+                  >
+                    <detail.icon className="text-muted-foreground mt-0.5 h-5 w-5" />
+                    <div>
+                      <h3 className="font-medium">{detail.label}</h3>
+                      <p className="text-muted-foreground">{detail.value}</p>
+                    </div>
+                  </motion.div>
+                ))}
               </div>
             </div>
           </section>
 
           <div className="mt-16 grid scroll-mt-16 grid-cols-1 gap-16 md:grid-cols-2 md:gap-10">
             <section id="skills">
-              <div className="mb-6 flex items-center gap-3">
+              <motion.div
+                variants={{
+                  hidden: { opacity: 0, x: -30 },
+                  visible: { opacity: 1, x: 0 }
+                }}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: false, amount: 0.2 }}
+                className="mb-6 flex items-center gap-3"
+              >
                 <Code className="text-primary h-6 w-6" />
                 <h2 className="text-3xl font-bold">Skills</h2>
-              </div>
+              </motion.div>
 
               <div className="space-y-6">
                 {skillCategories.map((category) => (
                   <div key={category.name}>
                     <h3 className="text-lg font-medium">{category.name}</h3>
                     <ul className="flex flex-wrap gap-2">
-                      {category.skills.map((skill) => (
-                        <li
+                      {category.skills.map((skill, index) => (
+                        <motion.li
                           key={skill}
+                          variants={{
+                            hidden: { opacity: 0, scale: 0.8 },
+                            visible: { opacity: 1, scale: 1 }
+                          }}
+                          initial="hidden"
+                          whileInView="visible"
+                          viewport={{ once: false, amount: 0.2 }}
+                          transition={{ delay: index * 0.05 }}
                           className="text-muted-foreground bg-primary/5 rounded-md border px-3 py-1.5 text-sm"
                         >
                           {skill}
-                        </li>
+                        </motion.li>
                       ))}
                     </ul>
                   </div>
@@ -224,18 +278,47 @@ const App = () => {
             </section>
 
             <section id="education">
-              <div className="mb-6 flex items-center gap-3">
+              <motion.div
+                variants={{
+                  hidden: { opacity: 0, x: -30 },
+                  visible: { opacity: 1, x: 0 }
+                }}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: false, amount: 0.2 }}
+                className="mb-6 flex items-center gap-3"
+              >
                 <GraduationCap className="text-primary h-6 w-6" />
                 <h2 className="text-3xl font-bold">Education</h2>
-              </div>
+              </motion.div>
 
               <div className="relative">
                 <div className="from-primary to-primary/20 absolute top-2 bottom-2 left-2 w-1 rounded-full bg-gradient-to-b"></div>
                 <div className="space-y-10 pb-12">
                   {education.map((edu, index) => (
                     <div key={index} className="relative ml-8">
-                      <div className="bg-primary absolute -left-5.5 h-3.5 w-3.5 -translate-x-1/2 rounded-full"></div>
-                      <div className="flex flex-col">
+                      <motion.div
+                        variants={{
+                          hidden: { opacity: 0, scale: 0 },
+                          visible: { opacity: 1, scale: 1 }
+                        }}
+                        initial="hidden"
+                        whileInView="visible"
+                        viewport={{ once: false, amount: 0.2 }}
+                        transition={{ delay: index * 0.2, duration: 0.3 }}
+                        className="bg-primary absolute -left-5.5 h-3.5 w-3.5 -translate-x-1/2 rounded-full"
+                      ></motion.div>
+                      <motion.div
+                        variants={{
+                          hidden: { opacity: 0, y: 30 },
+                          visible: { opacity: 1, y: 0 }
+                        }}
+                        initial="hidden"
+                        whileInView="visible"
+                        viewport={{ once: false, amount: 0.2 }}
+                        transition={{ delay: index * 0.1 }}
+                        className="flex flex-col"
+                      >
                         <span className="text-muted-foreground mb-1 text-sm">
                           {edu.period}
                         </span>
@@ -245,7 +328,7 @@ const App = () => {
                             {edu.institution}
                           </p>
                         )}
-                      </div>
+                      </motion.div>
                     </div>
                   ))}
                 </div>
@@ -254,32 +337,59 @@ const App = () => {
           </div>
 
           <section id="contact" className="mt-16 scroll-mt-16">
-            <div className="mb-6 flex items-center gap-3">
+            <motion.div
+              variants={{
+                hidden: { opacity: 0, x: -30 },
+                visible: { opacity: 1, x: 0 }
+              }}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: false, amount: 0.2 }}
+              className="mb-6 flex items-center gap-3"
+            >
               <Send className="text-primary h-6 w-6" />
               <h2 className="text-3xl font-bold">Contact</h2>
-            </div>
+            </motion.div>
 
             <div className="mt-4 grid grid-cols-1 gap-4 sm:grid-cols-2">
               {contactInfo.map((contact, index) => (
-                <a
+                <motion.a
                   key={index}
+                  variants={{
+                    hidden: { opacity: 0, y: 30 },
+                    visible: { opacity: 1, y: 0 }
+                  }}
+                  initial="hidden"
+                  whileInView="visible"
+                  viewport={{ once: false, amount: 0.2 }}
+                  transition={{ delay: index * 0.1 }}
                   href={contact.link}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="border-primary/20 bg-primary/5 hover:bg-primary/10 group relative flex items-center rounded-md border p-4 transition-colors"
                 >
-                  <div className="bg-primary/10 group-hover:bg-primary/20 mr-4 rounded-full p-3 transition-colors">
-                    <contact.icon className="h-6 w-6 text-white" />
-                  </div>
+                  <motion.div
+                    whileHover={{
+                      rotate: index % 2 === 0 ? '1.5deg' : '-1.5deg',
+                      scale: 1.05
+                    }}
+                    whileTap={{ scale: 0.95 }}
+                    className="border-primary/20 bg-primary/5 hover:bg-primary/10 group relative flex items-center rounded-md border p-4 transition-colors"
+                  >
+                    <div className="bg-primary/10 group-hover:bg-primary/20 mr-4 rounded-full p-3 transition-colors">
+                      <contact.icon className="h-6 w-6 text-white" />
+                    </div>
 
-                  <div className="flex-1 break-all">
-                    <h3 className="text-lg font-medium">{contact.platform}</h3>
-                    <p className="text-muted-foreground text-sm">
-                      {contact.value}
-                    </p>
-                  </div>
-                  <ExternalLink className="text-muted-foreground absolute top-4 right-4 h-4 w-4 opacity-100 transition-opacity group-hover:opacity-100 md:top-1/2 md:-translate-y-1/2 md:opacity-0" />
-                </a>
+                    <div className="flex-1 break-all">
+                      <h3 className="text-lg font-medium">
+                        {contact.platform}
+                      </h3>
+                      <p className="text-muted-foreground text-sm">
+                        {contact.value}
+                      </p>
+                    </div>
+                    <ExternalLink className="text-muted-foreground absolute top-4 right-4 h-4 w-4 opacity-100 transition-opacity group-hover:opacity-100 md:top-1/2 md:-translate-y-1/2 md:opacity-0" />
+                  </motion.div>
+                </motion.a>
               ))}
             </div>
           </section>

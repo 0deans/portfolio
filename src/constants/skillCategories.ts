@@ -1,4 +1,9 @@
-export const skillCategories = [
+export type SkillCategory = {
+  name: string
+  skills: string[]
+}
+
+export const skillCategories: SkillCategory[] = [
   {
     name: 'Frontend',
     skills: [

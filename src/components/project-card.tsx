@@ -34,7 +34,7 @@ export function ProjectCard({
 
   return (
     <>
-      <div className="bg-primary/5 relative flex flex-col rounded-md border p-4">
+      <div className="bg-primary/5 relative flex h-full flex-col rounded-md border p-4">
         <div className="mb-2 flex items-center justify-between">
           <h3 className="text-lg font-medium">{title}</h3>
           <a

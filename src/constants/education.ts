@@ -1,4 +1,10 @@
-export const education = [
+export type Education = {
+  degree: string
+  institution: string
+  period: string
+}
+
+export const education: Education[] = [
   {
     degree: "Bachelor's Degree - Software Engineering",
     institution: 'ISTU',

@@ -70,7 +70,7 @@ export function DuolingoWidget({ username }: DuolingoWidgetProps) {
           <Flame className="size-4 flex-shrink-0 text-orange-500 dark:text-orange-400" />
           <div className="flex-1">
             <span className="text-sm font-bold text-orange-700 dark:text-orange-300">{`${data.streak || 0}`}</span>
-            <span className="text-xs text-orange-600/90 dark:text-orange-400/80">
+            <span className="text-xs text-orange-700 dark:text-orange-300">
               {' '}
               Day Streak
             </span>
@@ -81,7 +81,7 @@ export function DuolingoWidget({ username }: DuolingoWidgetProps) {
           <Award className="size-4 flex-shrink-0 text-yellow-500 dark:text-yellow-400" />
           <div className="flex-1">
             <span className="text-sm font-bold text-yellow-700 dark:text-yellow-300">{`${(data.totalXp || 0).toLocaleString()}`}</span>
-            <span className="text-xs text-yellow-600/90 dark:text-yellow-400/80">
+            <span className="text-xs text-yellow-700 dark:text-yellow-300">
               {' '}
               Total XP
             </span>

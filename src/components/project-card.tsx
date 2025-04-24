@@ -44,6 +44,7 @@ export function ProjectCard({
             className="hover:text-primary/80 p-2 transition-colors"
           >
             <ExternalLink className="h-4 w-4" />
+            <span className="sr-only">Open {title} in a new tab</span>
           </a>
         </div>
 

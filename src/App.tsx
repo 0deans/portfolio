@@ -91,7 +91,7 @@ const App = () => {
 
         <main className="mt-8">
           <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
-            <section className="bg-card noise-bg flex h-full flex-col rounded-md border p-4">
+            <section className="noise-bg flex h-full flex-col rounded-md border border-zinc-200 bg-white p-4 dark:border-zinc-700 dark:bg-zinc-800/30">
               <div className="mb-2 flex items-center gap-3">
                 <Briefcase className="text-primary size-6 flex-shrink-0" />{' '}
                 <h2 className="text-card-foreground flex-grow text-lg font-semibold">
@@ -102,7 +102,7 @@ const App = () => {
                   <span className="relative inline-flex h-3 w-3 rounded-full bg-green-500"></span>
                 </span>
               </div>
-              <p className="text-muted-foreground mb-4 flex-grow text-sm">
+              <p className="text-muted-foreground mb-4 flex-grow text-sm text-balance">
                 As a Full-Stack Developer (JavaScript/TypeScript). Ready for new
                 challenges!
               </p>

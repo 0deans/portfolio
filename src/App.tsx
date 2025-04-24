@@ -3,7 +3,6 @@ import {
   Briefcase,
   Calendar,
   Code,
-  Download,
   ExternalLink,
   GraduationCap,
   Languages,
@@ -92,40 +91,28 @@ const App = () => {
 
         <main className="mt-8">
           <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
-            <section className="relative flex rounded-md border border-green-500">
-              <div className="flex items-center justify-center bg-green-500/10 p-4">
-                <Briefcase className="size-12 text-green-500 sm:size-16" />
-              </div>
-              <div className="flex flex-col justify-center p-3">
-                <h2 className="mb-1 flex items-center gap-2 text-xl font-bold">
-                  <span className="relative mr-1 flex h-2 w-2">
-                    <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-green-500 opacity-75"></span>
-                    <span className="relative inline-flex h-2 w-2 rounded-full bg-green-500"></span>
-                  </span>
-                  Open to Work
+            <section className="bg-card noise-bg flex h-full flex-col rounded-md border p-4">
+              <div className="mb-2 flex items-center gap-3">
+                <Briefcase className="text-primary size-6 flex-shrink-0" />{' '}
+                <h2 className="text-card-foreground flex-grow text-lg font-semibold">
+                  Actively Seeking Opportunities
                 </h2>
-                <p className="text-muted-foreground text-sm">
-                  Full-Stack Developer with JavaScript/TypeScript
-                </p>
-                <div className="mt-2 flex flex-wrap gap-2">
-                  <Button size="lg" className="flex-1 gap-1" asChild>
-                    <a href="/blank.pdf" download>
-                      <Download className="h-3 w-3" />
-                      Resume
-                    </a>
-                  </Button>
-                  <Button
-                    size="lg"
-                    variant="outline"
-                    className="flex-1 gap-1"
-                    asChild
-                  >
-                    <a href="#contact">
-                      <Send className="h-3 w-3" />
-                      Contact
-                    </a>
-                  </Button>
-                </div>
+                <span className="relative flex h-3 w-3 flex-shrink-0">
+                  <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-green-400 opacity-75"></span>
+                  <span className="relative inline-flex h-3 w-3 rounded-full bg-green-500"></span>
+                </span>
+              </div>
+              <p className="text-muted-foreground mb-4 flex-grow text-sm">
+                As a Full-Stack Developer (JavaScript/TypeScript). Ready for new
+                challenges!
+              </p>
+              <div className="mt-auto">
+                <Button variant="outline" size="sm" asChild>
+                  <a href="#contact">
+                    <Send className="h-4 w-4" />
+                    Let's get in touch
+                  </a>
+                </Button>
               </div>
             </section>
             <DuolingoWidget username="0dean" />

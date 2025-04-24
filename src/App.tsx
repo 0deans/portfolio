@@ -94,17 +94,18 @@ const App = () => {
         </div>
 
         <main className="mt-8">
-          <motion.div
-            variants={{
-              hidden: { opacity: 0, y: 30 },
-              visible: { opacity: 1, y: 0 }
-            }}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: false, amount: 0.2 }}
-            className="grid grid-cols-1 gap-6 sm:grid-cols-2"
-          >
-            <section className="noise-bg flex h-full flex-col rounded-md border border-zinc-200 bg-white p-4 dark:border-zinc-700 dark:bg-zinc-800/30">
+          <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
+            <motion.section
+              variants={{
+                hidden: { opacity: 0, y: 30 },
+                visible: { opacity: 1, y: 0 }
+              }}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: false, amount: 0.2 }}
+              style={{ willChange: 'transform' }}
+              className="noise-bg flex h-full flex-col rounded-md border border-zinc-200 bg-white p-4 dark:border-zinc-700 dark:bg-zinc-800/30"
+            >
               <div className="mb-2 flex items-center gap-3">
                 <Briefcase className="text-primary size-6 flex-shrink-0" />{' '}
                 <h2 className="text-card-foreground flex-grow text-lg font-semibold">
@@ -127,9 +128,20 @@ const App = () => {
                   </a>
                 </Button>
               </div>
-            </section>
-            <DuolingoWidget username="0dean" />
-          </motion.div>
+            </motion.section>
+            <motion.div
+              variants={{
+                hidden: { opacity: 0, y: 30 },
+                visible: { opacity: 1, y: 0 }
+              }}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: false, amount: 0.2 }}
+              style={{ willChange: 'transform' }}
+            >
+              <DuolingoWidget username="0dean" />
+            </motion.div>
+          </div>
 
           <section id="projects" className="mt-16 scroll-mt-16">
             <motion.div
@@ -140,6 +152,7 @@ const App = () => {
               initial="hidden"
               whileInView="visible"
               viewport={{ once: false, amount: 0.2 }}
+              style={{ willChange: 'transform' }}
               className="mb-6 flex items-center gap-3"
             >
               <Briefcase className="text-primary h-6 w-6" />
@@ -159,6 +172,7 @@ const App = () => {
                     whileInView="visible"
                     viewport={{ once: false, amount: 0.2 }}
                     transition={{ delay: index * 0.1 }}
+                    style={{ willChange: 'transform' }}
                   >
                     <ProjectCard
                       title={project.title}
@@ -182,6 +196,7 @@ const App = () => {
               initial="hidden"
               whileInView="visible"
               viewport={{ once: false, amount: 0.2 }}
+              style={{ willChange: 'transform' }}
               className="mb-6 flex items-center gap-3"
             >
               <User className="text-primary h-6 w-6" />
@@ -221,6 +236,7 @@ const App = () => {
                     whileInView="visible"
                     viewport={{ once: false, amount: 0.2 }}
                     transition={{ delay: index * 0.1 }}
+                    style={{ willChange: 'transform' }}
                     className="flex items-start gap-3"
                   >
                     <detail.icon className="text-muted-foreground mt-0.5 h-5 w-5" />
@@ -244,6 +260,7 @@ const App = () => {
                 initial="hidden"
                 whileInView="visible"
                 viewport={{ once: false, amount: 0.2 }}
+                style={{ willChange: 'transform' }}
                 className="mb-6 flex items-center gap-3"
               >
                 <Code className="text-primary h-6 w-6" />
@@ -266,6 +283,7 @@ const App = () => {
                           whileInView="visible"
                           viewport={{ once: false, amount: 0.2 }}
                           transition={{ delay: index * 0.05 }}
+                          style={{ willChange: 'transform' }}
                           className="text-muted-foreground bg-primary/5 rounded-md border px-3 py-1.5 text-sm"
                         >
                           {skill}
@@ -286,6 +304,7 @@ const App = () => {
                 initial="hidden"
                 whileInView="visible"
                 viewport={{ once: false, amount: 0.2 }}
+                style={{ willChange: 'transform' }}
                 className="mb-6 flex items-center gap-3"
               >
                 <GraduationCap className="text-primary h-6 w-6" />
@@ -306,6 +325,7 @@ const App = () => {
                         whileInView="visible"
                         viewport={{ once: false, amount: 0.2 }}
                         transition={{ delay: index * 0.2, duration: 0.3 }}
+                        style={{ willChange: 'transform' }}
                         className="bg-primary absolute -left-5.5 h-3.5 w-3.5 -translate-x-1/2 rounded-full"
                       ></motion.div>
                       <motion.div
@@ -317,6 +337,7 @@ const App = () => {
                         whileInView="visible"
                         viewport={{ once: false, amount: 0.2 }}
                         transition={{ delay: index * 0.1 }}
+                        style={{ willChange: 'transform' }}
                         className="flex flex-col"
                       >
                         <span className="text-muted-foreground mb-1 text-sm">
@@ -345,6 +366,7 @@ const App = () => {
               initial="hidden"
               whileInView="visible"
               viewport={{ once: false, amount: 0.2 }}
+              style={{ willChange: 'transform' }}
               className="mb-6 flex items-center gap-3"
             >
               <Send className="text-primary h-6 w-6" />
@@ -363,6 +385,7 @@ const App = () => {
                   whileInView="visible"
                   viewport={{ once: false, amount: 0.2 }}
                   transition={{ delay: index * 0.1 }}
+                  style={{ willChange: 'transform' }}
                   href={contact.link}
                   target="_blank"
                   rel="noopener noreferrer"
@@ -373,6 +396,7 @@ const App = () => {
                       scale: 1.05
                     }}
                     whileTap={{ scale: 0.95 }}
+                    style={{ willChange: 'transform' }}
                     className="border-primary/20 bg-primary/5 hover:bg-primary/10 group relative flex items-center rounded-md border p-4 transition-colors"
                   >
                     <div className="bg-primary/10 group-hover:bg-primary/20 mr-4 rounded-full p-3 transition-colors">

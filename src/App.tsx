@@ -146,8 +146,8 @@ const App = () => {
           <section id="projects" className="mt-16 scroll-mt-16">
             <motion.div
               variants={{
-                hidden: { opacity: 0, x: -30 },
-                visible: { opacity: 1, x: 0 }
+                hidden: { opacity: 0, y: -20 },
+                visible: { opacity: 1, y: 0 }
               }}
               initial="hidden"
               whileInView="visible"
@@ -190,8 +190,8 @@ const App = () => {
           <section id="about" className="mt-16 scroll-mt-16">
             <motion.div
               variants={{
-                hidden: { opacity: 0, x: -30 },
-                visible: { opacity: 1, x: 0 }
+                hidden: { opacity: 0, y: -20 },
+                visible: { opacity: 1, y: 0 }
               }}
               initial="hidden"
               whileInView="visible"
@@ -254,8 +254,8 @@ const App = () => {
             <section id="skills">
               <motion.div
                 variants={{
-                  hidden: { opacity: 0, x: -30 },
-                  visible: { opacity: 1, x: 0 }
+                  hidden: { opacity: 0, y: -20 },
+                  visible: { opacity: 1, y: 0 }
                 }}
                 initial="hidden"
                 whileInView="visible"
@@ -298,8 +298,8 @@ const App = () => {
             <section id="education">
               <motion.div
                 variants={{
-                  hidden: { opacity: 0, x: -30 },
-                  visible: { opacity: 1, x: 0 }
+                  hidden: { opacity: 0, y: -20 },
+                  visible: { opacity: 1, y: 0 }
                 }}
                 initial="hidden"
                 whileInView="visible"
@@ -360,8 +360,8 @@ const App = () => {
           <section id="contact" className="mt-16 scroll-mt-16">
             <motion.div
               variants={{
-                hidden: { opacity: 0, x: -30 },
-                visible: { opacity: 1, x: 0 }
+                hidden: { opacity: 0, y: -20 },
+                visible: { opacity: 1, y: 0 }
               }}
               initial="hidden"
               whileInView="visible"

@@ -10,6 +10,7 @@ import {
 } from 'lucide-react'
 import { motion } from 'motion/react'
 import BannerImgMeta from './assets/banner.jpg?w=400;800&format=webp;avif;png&as=picture'
+import { AnimatedTextCharacter } from './components/animated-text-character'
 import { CopyableText } from './components/copyable-text'
 import { DuolingoWidget } from './components/duolingo-widget'
 import { Image } from './components/image'
@@ -102,7 +103,7 @@ const App = () => {
               }}
               initial="hidden"
               whileInView="visible"
-              viewport={{ once: false, amount: 0.2 }}
+              viewport={{ once: true, amount: 0.2 }}
               style={{ willChange: 'transform' }}
               className="noise-bg flex h-full flex-col rounded-md border border-zinc-200 bg-white p-4 dark:border-zinc-700 dark:bg-zinc-800/30"
             >
@@ -136,7 +137,7 @@ const App = () => {
               }}
               initial="hidden"
               whileInView="visible"
-              viewport={{ once: false, amount: 0.2 }}
+              viewport={{ once: true, amount: 0.2 }}
               style={{ willChange: 'transform' }}
             >
               <DuolingoWidget username="0dean" />
@@ -151,7 +152,7 @@ const App = () => {
               }}
               initial="hidden"
               whileInView="visible"
-              viewport={{ once: false, amount: 0.2 }}
+              viewport={{ once: true, amount: 0.2 }}
               style={{ willChange: 'transform' }}
               className="mb-6 flex items-center gap-3"
             >
@@ -170,7 +171,7 @@ const App = () => {
                     }}
                     initial="hidden"
                     whileInView="visible"
-                    viewport={{ once: false, amount: 0.2 }}
+                    viewport={{ once: true, amount: 0.2 }}
                     transition={{ delay: index * 0.1 }}
                     style={{ willChange: 'transform' }}
                   >
@@ -195,7 +196,7 @@ const App = () => {
               }}
               initial="hidden"
               whileInView="visible"
-              viewport={{ once: false, amount: 0.2 }}
+              viewport={{ once: true, amount: 0.2 }}
               style={{ willChange: 'transform' }}
               className="mb-6 flex items-center gap-3"
             >
@@ -204,7 +205,17 @@ const App = () => {
             </motion.div>
 
             <div className="space-y-8">
-              <div>
+              <AnimatedTextCharacter
+                charVariants={{
+                  hidden: { opacity: 0 },
+                  visible: { opacity: 1 }
+                }}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true, amount: 0.2 }}
+                transition={{ staggerChildren: 0.004 }}
+                charStyle={{ willChange: 'opacity' }}
+              >
                 <p className="text-lg leading-relaxed">
                   I'm a <strong>Full-Stack Developer</strong> with over{' '}
                   <strong>two years</strong> of experience in web development. I
@@ -222,7 +233,7 @@ const App = () => {
                   passion led me to software development, where I continue to
                   explore and grow.
                 </p>
-              </div>
+              </AnimatedTextCharacter>
 
               <div className="grid grid-cols-1 gap-4 pt-4 sm:grid-cols-2 md:grid-cols-3">
                 {aboutDetails.map((detail, index) => (
@@ -234,7 +245,7 @@ const App = () => {
                     }}
                     initial="hidden"
                     whileInView="visible"
-                    viewport={{ once: false, amount: 0.2 }}
+                    viewport={{ once: true, amount: 0.2 }}
                     transition={{ delay: index * 0.1 }}
                     style={{ willChange: 'transform' }}
                     className="flex items-start gap-3"
@@ -259,7 +270,7 @@ const App = () => {
                 }}
                 initial="hidden"
                 whileInView="visible"
-                viewport={{ once: false, amount: 0.2 }}
+                viewport={{ once: true, amount: 0.2 }}
                 style={{ willChange: 'transform' }}
                 className="mb-6 flex items-center gap-3"
               >
@@ -281,7 +292,7 @@ const App = () => {
                           }}
                           initial="hidden"
                           whileInView="visible"
-                          viewport={{ once: false, amount: 0.2 }}
+                          viewport={{ once: true, amount: 0.2 }}
                           transition={{ delay: index * 0.05 }}
                           style={{ willChange: 'transform' }}
                           className="text-muted-foreground bg-primary/5 rounded-md border px-3 py-1.5 text-sm"
@@ -303,7 +314,7 @@ const App = () => {
                 }}
                 initial="hidden"
                 whileInView="visible"
-                viewport={{ once: false, amount: 0.2 }}
+                viewport={{ once: true, amount: 0.2 }}
                 style={{ willChange: 'transform' }}
                 className="mb-6 flex items-center gap-3"
               >
@@ -323,7 +334,7 @@ const App = () => {
                         }}
                         initial="hidden"
                         whileInView="visible"
-                        viewport={{ once: false, amount: 0.2 }}
+                        viewport={{ once: true, amount: 0.2 }}
                         transition={{ delay: index * 0.2, duration: 0.3 }}
                         style={{ willChange: 'transform' }}
                         className="bg-primary absolute -left-5.5 h-3.5 w-3.5 -translate-x-1/2 rounded-full"
@@ -335,7 +346,7 @@ const App = () => {
                         }}
                         initial="hidden"
                         whileInView="visible"
-                        viewport={{ once: false, amount: 0.2 }}
+                        viewport={{ once: true, amount: 0.2 }}
                         transition={{ delay: index * 0.1 }}
                         style={{ willChange: 'transform' }}
                         className="flex flex-col"
@@ -365,7 +376,7 @@ const App = () => {
               }}
               initial="hidden"
               whileInView="visible"
-              viewport={{ once: false, amount: 0.2 }}
+              viewport={{ once: true, amount: 0.2 }}
               style={{ willChange: 'transform' }}
               className="mb-6 flex items-center gap-3"
             >
@@ -383,7 +394,7 @@ const App = () => {
                   }}
                   initial="hidden"
                   whileInView="visible"
-                  viewport={{ once: false, amount: 0.2 }}
+                  viewport={{ once: true, amount: 0.2 }}
                   transition={{ delay: index * 0.1 }}
                   style={{ willChange: 'transform' }}
                   href={contact.link}

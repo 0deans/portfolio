@@ -43,7 +43,7 @@ const App = () => {
     <div className="noise-bg flex min-h-screen flex-col items-center">
       <ThemeListener />
 
-      <header className="dark relative w-full pb-4 md:max-w-4xl md:p-4">
+      <header className="dark relative w-full pb-2 md:max-w-4xl md:p-4 md:pb-2">
         <div className="bg-secondary aspect-[16/5] w-full overflow-hidden shadow-sm md:rounded-md">
           <Image
             meta={BannerImgMeta}
@@ -78,20 +78,22 @@ const App = () => {
       </header>
 
       <div className="w-full max-w-4xl p-4 pt-0">
-        <div className="flex items-center justify-between">
-          <MobileNav items={navItems} />
-          <nav className="hidden sm:block">
-            <ul className="flex space-x-2">
-              {navItems.map((item) => (
-                <li key={item.title}>
-                  <Button variant="ghost" asChild>
-                    <a href={item.href}>{item.title}</a>
-                  </Button>
-                </li>
-              ))}
-            </ul>
-          </nav>
-          <ThemeToggle />
+        <div className="noise-bg bg-background/40 dark:bg-background/65 sticky top-4 z-50 -mx-2 overflow-hidden rounded-md px-2 py-2 backdrop-blur-sm">
+          <div className="flex items-center justify-between">
+            <MobileNav items={navItems} />
+            <nav className="hidden sm:block">
+              <ul className="flex space-x-2">
+                {navItems.map((item) => (
+                  <li key={item.title}>
+                    <Button variant="ghost" asChild>
+                      <a href={item.href}>{item.title}</a>
+                    </Button>
+                  </li>
+                ))}
+              </ul>
+            </nav>
+            <ThemeToggle />
+          </div>
         </div>
 
         <main className="mt-8">

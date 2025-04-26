@@ -146,7 +146,7 @@ const App = () => {
             </motion.div>
           </div>
 
-          <section id="projects" className="mt-16 scroll-mt-16">
+          <section id="projects" className="mt-18 scroll-mt-18">
             <motion.div
               variants={{
                 hidden: { opacity: 0, y: -20 },
@@ -190,7 +190,7 @@ const App = () => {
             </div>
           </section>
 
-          <section id="about" className="mt-16 scroll-mt-16">
+          <section id="about" className="mt-18 scroll-mt-18">
             <motion.div
               variants={{
                 hidden: { opacity: 0, y: -20 },
@@ -263,8 +263,8 @@ const App = () => {
             </div>
           </section>
 
-          <div className="mt-16 grid scroll-mt-16 grid-cols-1 gap-16 md:grid-cols-2 md:gap-10">
-            <section id="skills">
+          <div className="mt-18 grid grid-cols-1 gap-18 md:grid-cols-2 md:gap-10">
+            <section id="skills" className='scroll-mt-18'>
               <motion.div
                 variants={{
                   hidden: { opacity: 0, y: -20 },
@@ -308,7 +308,7 @@ const App = () => {
               </div>
             </section>
 
-            <section id="education">
+            <section id="education" className='scroll-mt-18'>
               <motion.div
                 variants={{
                   hidden: { opacity: 0, y: -20 },
@@ -370,7 +370,7 @@ const App = () => {
             </section>
           </div>
 
-          <section id="contact" className="mt-16 scroll-mt-16">
+          <section id="contact" className="mt-18 scroll-mt-18">
             <motion.div
               variants={{
                 hidden: { opacity: 0, y: -20 },

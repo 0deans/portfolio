@@ -26,7 +26,7 @@ const getProjectImages = (
   }))
 }
 
-export type Project = {
+export interface Project {
   title: string
   description: string
   link: string

@@ -1,10 +1,8 @@
-import { SiDiscord, SiGithub, SiTelegram } from '@icons-pack/react-simple-icons'
 import {
   Briefcase,
   Code,
   ExternalLink,
   GraduationCap,
-  Mail,
   Send,
   User
 } from 'lucide-react'
@@ -25,18 +23,10 @@ import {
   aboutDetails,
   contactInfo,
   education,
+  navItems,
   projects,
   skillCategories
 } from './constants'
-
-const navItems = [
-  { title: 'Home', href: '/' },
-  { title: 'Projects', href: '#projects' },
-  { title: 'About', href: '#about' },
-  { title: 'Skills', href: '#skills' },
-  { title: 'Education', href: '#education' },
-  { title: 'Contact', href: '#contact' }
-]
 
 const App = () => {
   return (
@@ -264,7 +254,7 @@ const App = () => {
           </section>
 
           <div className="mt-18 grid grid-cols-1 gap-18 md:grid-cols-2 md:gap-10">
-            <section id="skills" className='scroll-mt-18'>
+            <section id="skills" className="scroll-mt-18">
               <motion.div
                 variants={{
                   hidden: { opacity: 0, y: -20 },
@@ -308,7 +298,7 @@ const App = () => {
               </div>
             </section>
 
-            <section id="education" className='scroll-mt-18'>
+            <section id="education" className="scroll-mt-18">
               <motion.div
                 variants={{
                   hidden: { opacity: 0, y: -20 },
@@ -439,42 +429,18 @@ const App = () => {
                 © {new Date().getFullYear()} 0dean. All rights reserved.
               </div>
               <div className="flex items-center space-x-4">
-                <Button variant="ghost" size="icon" asChild>
-                  <a
-                    href="https://github.com/0deans"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    <SiGithub className="h-5 w-5" />
-                    <span className="sr-only">GitHub</span>
-                  </a>
-                </Button>
-                <Button variant="ghost" size="icon" asChild>
-                  <a
-                    href="https://t.me/odean0"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    <SiTelegram className="h-5 w-5" />
-                    <span className="sr-only">Telegram</span>
-                  </a>
-                </Button>
-                <Button variant="ghost" size="icon" asChild>
-                  <a
-                    href="https://discord.gg/WVJPUTSu"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    <SiDiscord className="h-5 w-5" />
-                    <span className="sr-only">Discord</span>
-                  </a>
-                </Button>
-                <Button variant="ghost" size="icon" asChild>
-                  <a href="mailto:denysstetsenko4@gmail.com">
-                    <Mail className="h-5 w-5" />
-                    <span className="sr-only">Email</span>
-                  </a>
-                </Button>
+                {contactInfo.map((contact, index) => (
+                  <Button key={index} variant="ghost" size="icon" asChild>
+                    <a
+                      href={contact.link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      <contact.icon className="h-5 w-5" />
+                      <span className="sr-only">{contact.platform}</span>
+                    </a>
+                  </Button>
+                ))}
               </div>
             </div>
           </div>

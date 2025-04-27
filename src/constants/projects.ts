@@ -66,5 +66,38 @@ export const projects: Project[] = [
     link: 'https://github.com/0deans/Car-Plate-Recognition',
     tags: ['Computer Vision', 'Python', 'Machine Learning'],
     images: getProjectImages('license-plate')
+  },
+  {
+    title: 'SvelteKit Authentication Example',
+    description:
+      'Full-stack authentication implementation using SvelteKit and Lucia-auth. Features include email/password, GitHub & Google OAuth, avatar uploads, dark theme, session management (view/revoke), account linking, password reset, and profile updates. Uses Prisma ORM and Zod validation.',
+    link: 'https://github.com/0deans/sveltekit-auth',
+    tags: [
+      'SvelteKit',
+      'Lucia-Auth',
+      'Authentication',
+      'TypeScript',
+      'Prisma',
+      'Zod',
+      'Tailwind CSS',
+      'OAuth'
+    ],
+    images: getProjectImages('sveltekit-auth')
+  },
+  {
+    title: 'Optifine Decompiled Source (Minecraft)',
+    description:
+      'Decompiled source code for the Optifine mod using ParchmentMC/MCP-Reborn mappings. Includes manual fixes for runnability and covers newer Minecraft versions.',
+    link: 'https://github.com/0deans/Optifine-SRC',
+    tags: [
+      'Minecraft',
+      'Java',
+      'Decompilation',
+      'Reverse Engineering',
+      'ParchmentMC',
+      'MCP-Reborn',
+      'Modding'
+    ],
+    images: getProjectImages('optifine-src')
   }
 ]

@@ -35,6 +35,7 @@ export function ProjectsSection() {
               viewport={{ once: true, amount: 0.2 }}
               transition={{ delay: index * 0.1 }}
               style={{ willChange: 'transform' }}
+              className="last:self-start"
             >
               <ProjectCard
                 title={project.title}

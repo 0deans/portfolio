@@ -22,7 +22,11 @@ export function Header() {
             <AvatarFallback className="text-4xl">D</AvatarFallback>
           </Avatar>
           <div className="pointer-events-none absolute inset-0 z-10">
-            <img src="avatar-decoration.png" alt="Avatar decoration" />
+            <img
+              src="avatar-decoration.png"
+              alt="Avatar decoration"
+              loading="lazy"
+            />
           </div>
         </div>
         <div className="ml-4">

@@ -1,10 +1,13 @@
 import { ExternalLink, ImageIcon } from 'lucide-react'
-import { useState } from 'react'
+import { lazy, Suspense, useState } from 'react'
 import { ImgMeta } from '@/types/image'
-import { Image } from './image'
-import { ImageModal } from './image-model'
 import { Badge } from '../ui/badge'
 import { ScrollArea, ScrollBar } from '../ui/scroll-area'
+import { Image } from './image'
+
+const LazyImageModal = lazy(() =>
+  import('./image-model').then((module) => ({ default: module.ImageModal }))
+)
 
 interface ProjectCardProps {
   title: string
@@ -79,13 +82,15 @@ export function ProjectCard({
         </ScrollArea>
       </div>
 
-      <ImageModal
-        images={images.map((image) => image.full)}
-        alt={title}
-        isOpen={isImageModalOpen}
-        onClose={() => setIsImageModalOpen(false)}
-        initialIndex={selectedImageIndex}
-      />
+      <Suspense fallback={null}>
+        <LazyImageModal
+          images={images.map((image) => image.full)}
+          alt={title}
+          isOpen={isImageModalOpen}
+          onClose={() => setIsImageModalOpen(false)}
+          initialIndex={selectedImageIndex}
+        />
+      </Suspense>
     </>
   )
 }

@@ -6,13 +6,13 @@ import {
   CarouselItem,
   CarouselNext,
   CarouselPrevious
-} from './ui/carousel'
+} from '../ui/carousel'
 import {
   Dialog,
   DialogContent,
   DialogDescription,
   DialogTitle
-} from './ui/dialog'
+} from '../ui/dialog'
 
 interface ImageModalProps {
   images: string[]

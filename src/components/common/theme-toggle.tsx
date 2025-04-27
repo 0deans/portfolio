@@ -7,7 +7,7 @@ import {
 } from '@/components/ui/dropdown-menu'
 import { cn } from '@/lib/utils'
 import { Theme, useThemeStore } from '@/stores/theme'
-import { Button } from './ui/button'
+import { Button } from '../ui/button'
 
 const themeOptions: { value: Theme; icon: LucideIcon }[] = [
   { value: 'light', icon: Sun },

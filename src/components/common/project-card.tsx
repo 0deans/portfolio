@@ -3,8 +3,8 @@ import { useState } from 'react'
 import { ImgMeta } from '@/types/image'
 import { Image } from './image'
 import { ImageModal } from './image-model'
-import { Badge } from './ui/badge'
-import { ScrollArea, ScrollBar } from './ui/scroll-area'
+import { Badge } from '../ui/badge'
+import { ScrollArea, ScrollBar } from '../ui/scroll-area'
 
 interface ProjectCardProps {
   title: string

@@ -1,7 +1,7 @@
 import { Award, ExternalLink, Flame, Languages } from 'lucide-react'
 import { useDuolingoProfile } from '@/hooks/useDuolingoProfile'
-import { Button } from './ui/button'
-import { Skeleton } from './ui/skeleton'
+import { Button } from '../ui/button'
+import { Skeleton } from '../ui/skeleton'
 
 interface DuolingoWidgetProps {
   username: string

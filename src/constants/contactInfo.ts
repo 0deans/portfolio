@@ -30,7 +30,7 @@ export const contactInfo: ContactInfo[] = [
     platform: 'Discord',
     value: '@0dean',
     icon: SiDiscord,
-    link: 'https://discord.gg/WVJPUTSu'
+    link: 'https://discord.gg/NhywzxvJ'
   },
   {
     platform: 'GitHub',

@@ -65,7 +65,7 @@ export function AboutSection() {
               style={{ willChange: 'transform' }}
               className="flex items-start gap-3"
             >
-              <detail.icon className="text-muted-foreground mt-0.5 h-5 w-5" />
+              <detail.icon className="text-muted-foreground mt-0.5 h-5 w-5 min-w-5" />
               <div>
                 <h3 className="font-medium">{detail.label}</h3>
                 <p className="text-muted-foreground">{detail.value}</p>

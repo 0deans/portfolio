@@ -46,7 +46,7 @@ export function ImageModal({
 
   return (
     <Dialog open={isOpen} onOpenChange={onClose}>
-      <DialogContent className="flex size-full min-w-full flex-col rounded-none border-none p-14">
+      <DialogContent className="flex size-full min-w-full flex-col rounded-none border-none p-14 [&>button:last-child]:text-white">
         <div
           className="absolute inset-0 scale-125 bg-cover bg-center blur-lg brightness-30"
           style={{

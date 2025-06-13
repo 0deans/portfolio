@@ -25,7 +25,16 @@ export const skillCategories: SkillCategory[] = [
     skills: ['Tauri', 'Flutter']
   },
   {
-    name: 'Other',
-    skills: ['C#', 'Java', 'Git', 'Docker']
+    name: 'Tooling & Other',
+    skills: [
+      'C#',
+      'Java',
+      'Git',
+      'Docker',
+      'ESLint',
+      'Prettier',
+      'Vite',
+      'Cloudflare Pages/Workers'
+    ]
   }
 ]

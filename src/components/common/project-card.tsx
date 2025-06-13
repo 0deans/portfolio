@@ -64,7 +64,7 @@ export function ProjectCard({
             {images.map((image, index) => (
               <button
                 key={index}
-                className="group bg-secondary relative h-20 w-24 shrink-0 cursor-pointer overflow-hidden rounded-sm"
+                className="group bg-secondary relative h-20 w-24 shrink-0 cursor-pointer overflow-hidden rounded-sm border"
                 onClick={() => openModal(index)}
               >
                 <Image

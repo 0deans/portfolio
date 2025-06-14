@@ -1,9 +1,13 @@
 import { Briefcase } from 'lucide-react'
 import { motion } from 'motion/react'
-import { projects } from '@/constants'
+import { useTranslation } from 'react-i18next'
+import { getProjects } from '@/constants'
 import { ProjectCard } from '../common/project-card'
 
 export function ProjectsSection() {
+  const { t } = useTranslation()
+  const projects = getProjects(t)
+
   return (
     <section id="projects" className="mt-18 scroll-mt-18">
       <motion.div
@@ -18,7 +22,7 @@ export function ProjectsSection() {
         className="mb-6 flex items-center gap-3"
       >
         <Briefcase className="text-primary h-6 w-6" />
-        <h2 className="text-3xl font-bold">Projects</h2>
+        <h2 className="text-3xl font-bold">{t('sections.projects')}</h2>
       </motion.div>
 
       <div className="grid grid-cols-1 gap-8 sm:grid-cols-2">

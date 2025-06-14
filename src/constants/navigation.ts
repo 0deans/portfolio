@@ -1,13 +1,15 @@
+import { TFunction } from 'i18next'
+
 export interface NavItem {
   title: string
   href: string
 }
 
-export const navItems: NavItem[] = [
-  { title: 'Home', href: '/' },
-  { title: 'Projects', href: '#projects' },
-  { title: 'About', href: '#about' },
-  { title: 'Skills', href: '#skills' },
-  { title: 'Education', href: '#education' },
-  { title: 'Contact', href: '#contact' }
+export const getNavItems = (t: TFunction): NavItem[] => [
+  { title: t('nav.home'), href: '/' },
+  { title: t('nav.projects'), href: '#projects' },
+  { title: t('nav.about'), href: '#about' },
+  { title: t('nav.skills'), href: '#skills' },
+  { title: t('nav.education'), href: '#education' },
+  { title: t('nav.contact'), href: '#contact' }
 ]

@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react'
+import { useTranslation } from 'react-i18next'
 import {
   Carousel,
   CarouselApi,
@@ -32,6 +33,7 @@ export function ImageModal({
   const [api, setApi] = useState<CarouselApi>()
   const [current, setCurrent] = useState(0)
   const [count, setCount] = useState(0)
+  const { t } = useTranslation()
 
   useEffect(() => {
     if (!api) return
@@ -72,7 +74,11 @@ export function ImageModal({
                 >
                   <img
                     src={image}
-                    alt={`${alt} - image ${current} of ${images.length}`}
+                    alt={t('imageModal.imageAlt', {
+                      alt: alt,
+                      current: current,
+                      total: images.length
+                    })}
                     loading="lazy"
                     className="max-h-full object-contain"
                   />
@@ -85,7 +91,7 @@ export function ImageModal({
         </div>
         <DialogDescription asChild>
           <div className="text-muted-foreground z-10 mx-auto text-sm">
-            Image {current} of {count}
+            {t('imageModal.imageCounter', { current: current, total: count })}
           </div>
         </DialogDescription>
       </DialogContent>

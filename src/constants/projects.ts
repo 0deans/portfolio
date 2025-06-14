@@ -1,3 +1,4 @@
+import { TFunction } from 'i18next'
 import { ImgMeta } from '@/types/image'
 
 const allThumbs = import.meta.glob('../assets/projects/*/preview*.png', {
@@ -34,43 +35,38 @@ export interface Project {
   images: { thumb: ImgMeta; full: string }[]
 }
 
-export const projects: Project[] = [
+export const getProjects = (t: TFunction): Project[] => [
   {
-    title: 'SimpleFF',
-    description:
-      'A simple interface for FFmpeg built with Tauri/SvelteKit that allows users to select video files and reformat them with customizable codec options.',
+    title: t('projects.simpleff.title'),
+    description: t('projects.simpleff.description'),
     link: 'https://github.com/0deans/SimpleFF',
     tags: ['Tauri', 'SvelteKit', 'TypeScript', 'FFmpeg'],
     images: getProjectImages('simpleff')
   },
   {
-    title: 'Climate Visualization Platform',
-    description:
-      'A collaborative project with a team of 2, where we developed a website featuring a map displaying temperature readings from multiple measuring stations, isolines, and the temperature gradient.',
-    link: 'https://climate.0dean.lol/',
+    title: t('projects.climate.title'),
+    description: t('projects.climate.description'),
+    link: 'https://climateistu.tech/',
     tags: ['React', 'TypeScript', 'GIS', 'Data Visualization'],
     images: getProjectImages('climate')
   },
   {
-    title: 'Food Composition Recognition App',
-    description:
-      'A mobile application for recognizing the composition of food (dishes) using image recognition technology.',
+    title: t('projects.foodly.title'),
+    description: t('projects.foodly.description'),
     link: 'https://github.com/0deans/foodly',
     tags: ['Flutter', 'Machine Learning', 'Mobile Development'],
     images: getProjectImages('foodly')
   },
   {
-    title: 'Vehicle License Plate Recognition',
-    description:
-      'A system for recognizing vehicle license plates for cars and other vehicles using computer vision techniques.',
+    title: t('projects.licensePlate.title'),
+    description: t('projects.licensePlate.description'),
     link: 'https://github.com/0deans/Car-Plate-Recognition',
     tags: ['Computer Vision', 'Python', 'Machine Learning'],
     images: getProjectImages('license-plate')
   },
   {
-    title: 'SvelteKit Authentication Example',
-    description:
-      'Full-stack authentication implementation using SvelteKit and Lucia-auth. Features include email/password, GitHub & Google OAuth, avatar uploads, dark theme, session management (view/revoke), account linking, password reset, and profile updates. Uses Prisma ORM and Zod validation.',
+    title: t('projects.sveltekitAuth.title'),
+    description: t('projects.sveltekitAuth.description'),
     link: 'https://github.com/0deans/sveltekit-auth',
     tags: [
       'SvelteKit',
@@ -85,9 +81,8 @@ export const projects: Project[] = [
     images: getProjectImages('sveltekit-auth')
   },
   {
-    title: 'Optifine Decompiled Source (Minecraft)',
-    description:
-      'Decompiled source code for the Optifine mod using ParchmentMC/MCP-Reborn mappings. Includes manual fixes for runnability and covers newer Minecraft versions.',
+    title: t('projects.optifineSrc.title'),
+    description: t('projects.optifineSrc.description'),
     link: 'https://github.com/0deans/Optifine-SRC',
     tags: [
       'Minecraft',

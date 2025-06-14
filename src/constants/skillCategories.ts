@@ -1,11 +1,13 @@
+import { TFunction } from 'i18next'
+
 export interface SkillCategory {
   name: string
   skills: string[]
 }
 
-export const skillCategories: SkillCategory[] = [
+export const getSkillCategories = (t: TFunction): SkillCategory[] => [
   {
-    name: 'Frontend',
+    name: t('skillCategories.frontend'),
     skills: [
       'JavaScript',
       'TypeScript',
@@ -17,15 +19,15 @@ export const skillCategories: SkillCategory[] = [
     ]
   },
   {
-    name: 'Backend',
+    name: t('skillCategories.backend'),
     skills: ['Node.js', 'Hono.js', 'PostgreSQL', 'SQLite']
   },
   {
-    name: 'Mobile & Desktop',
+    name: t('skillCategories.mobileDesktop'),
     skills: ['Tauri', 'Flutter']
   },
   {
-    name: 'Tooling & Other',
+    name: t('skillCategories.tooling'),
     skills: [
       'C#',
       'Java',

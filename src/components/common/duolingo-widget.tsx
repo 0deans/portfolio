@@ -1,4 +1,5 @@
 import { Award, ExternalLink, Flame, Languages } from 'lucide-react'
+import { useTranslation } from 'react-i18next'
 import { useDuolingoProfile } from '@/hooks/useDuolingoProfile'
 import { Button } from '../ui/button'
 import { Skeleton } from '../ui/skeleton'
@@ -9,6 +10,7 @@ interface DuolingoWidgetProps {
 
 export function DuolingoWidget({ username }: DuolingoWidgetProps) {
   const { data, isLoading, error, refetch } = useDuolingoProfile(username)
+  const { t } = useTranslation()
 
   if (isLoading) {
     return (
@@ -38,17 +40,17 @@ export function DuolingoWidget({ username }: DuolingoWidgetProps) {
       <div className="border-destructive/50 bg-destructive/10 flex h-full min-h-[195px] flex-col items-center justify-center rounded-md border p-3 text-center">
         <Languages className="text-destructive/60 mb-2 size-8" />
         <p className="text-destructive mb-1 text-lg font-semibold">
-          Duolingo Error
+          {t('duolingo.error.title')}
         </p>
         <p className="text-destructive/80 mb-2 max-w-[90%] text-sm">
-          {error?.message || 'Could not load profile data.'}
+          {error?.message || t('duolingo.error.message')}
         </p>
         <Button
           onClick={() => refetch()}
           variant="destructive"
           className="h-7 px-2"
         >
-          Retry
+          {t('duolingo.error.retry')}
         </Button>
       </div>
     )
@@ -58,10 +60,10 @@ export function DuolingoWidget({ username }: DuolingoWidgetProps) {
     <section className="noise-bg relative flex h-full flex-col overflow-hidden rounded-md border border-zinc-200 bg-white p-3 dark:border-zinc-700 dark:bg-zinc-800/30">
       <div className="mb-3">
         <h2 className="text-lg leading-tight font-semibold text-green-700 dark:text-green-400">
-          Learning English
+          {t('duolingo.learning')}
         </h2>
         <p className="text-[11px] text-zinc-500 dark:text-zinc-400/80">
-          via Duolingo
+          {t('duolingo.via')}
         </p>
       </div>
 
@@ -72,7 +74,7 @@ export function DuolingoWidget({ username }: DuolingoWidgetProps) {
             <span className="text-sm font-bold text-orange-700 dark:text-orange-300">{`${data.streak || 0}`}</span>
             <span className="text-xs text-orange-700 dark:text-orange-300">
               {' '}
-              Day Streak
+              {t('duolingo.dayStreak')}
             </span>
           </div>
         </div>
@@ -83,7 +85,7 @@ export function DuolingoWidget({ username }: DuolingoWidgetProps) {
             <span className="text-sm font-bold text-yellow-700 dark:text-yellow-300">{`${(data.totalXp || 0).toLocaleString()}`}</span>
             <span className="text-xs text-yellow-700 dark:text-yellow-300">
               {' '}
-              Total XP
+              {t('duolingo.totalXp')}
             </span>
           </div>
         </div>
@@ -102,7 +104,7 @@ export function DuolingoWidget({ username }: DuolingoWidgetProps) {
             rel="noopener noreferrer"
             className="inline-flex items-center gap-0.5"
           >
-            View Profile
+            {t('duolingo.viewProfile')}
             <ExternalLink className="size-3" />
           </a>
         </Button>

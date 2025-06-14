@@ -1,0 +1,114 @@
+{
+  "header": {
+    "name": "Denys",
+    "pronouns": "he/him",
+    "age": "20yo"
+  },
+  "copy": {
+    "copied": "Copied!",
+    "clickToCopy": "Click to copy"
+  },
+  "nav": {
+    "home": "Home",
+    "projects": "Projects",
+    "about": "About",
+    "skills": "Skills",
+    "education": "Education",
+    "contact": "Contact",
+    "navigation": "Navigation"
+  },
+  "sections": {
+    "projects": "Projects",
+    "aboutMe": "About Me",
+    "skills": "Skills",
+    "education": "Education",
+    "contact": "Contact"
+  },
+  "hero": {
+    "seekingOpportunities": "Actively Seeking Opportunities",
+    "seekingDescription": "As a Full-Stack Developer (JavaScript/TypeScript). Ready for new challenges!",
+    "getInTouch": "Let's get in touch"
+  },
+  "duolingo": {
+    "learning": "Learning English",
+    "via": "via Duolingo",
+    "dayStreak": "Day Streak",
+    "totalXp": "Total XP",
+    "viewProfile": "View Profile",
+    "error": {
+      "title": "Duolingo Error",
+      "message": "Could not load profile data.",
+      "retry": "Retry"
+    }
+  },
+  "imageModal": {
+    "imageAlt": "{{alt}} - image {{current}} of {{total}}",
+    "imageCounter": "Image {{current}} of {{total}}"
+  },
+  "about": {
+    "p1": "I'm a <bold>Full-Stack Developer</bold> with over <bold>two years</bold> of experience in web development. I focus on building <bold>clean</bold>, <bold>efficient</bold>, and <bold>responsive</bold> applications while constantly improving my skills through real-world projects. <italic>I enjoy working in a team</italic> and taking new challenges.",
+    "p2": "My journey in development started in high school when I got into <bold>modding Minecraft</bold>, creating custom modifications and clients in <bold>Java</bold>. That early passion led me to software development, where I continue to explore and grow.",
+    "birthdate": "Birthdate",
+    "location": "Location",
+    "languages": "Languages",
+    "locationValue": "Kyiv region, Ukraine",
+    "languagesValue": "Ukrainian (Native), Russian (Fluent), English (Beginner)"
+  },
+  "skillCategories": {
+    "frontend": "Frontend",
+    "backend": "Backend",
+    "mobileDesktop": "Mobile & Desktop",
+    "tooling": "Tooling & Other"
+  },
+  "educationItems": {
+    "bachelor": {
+      "degree": "Bachelor's Degree - Software Engineering",
+      "institution": "ISTU",
+      "period": "9/2021 - present"
+    },
+    "highSchool": {
+      "degree": "High School (Complete Secondary Education)",
+      "period": "9/2019 - 5/2021"
+    },
+    "middleSchool": {
+      "degree": "Middle School (Basic Secondary Education)",
+      "period": "9/2010 - 6/2019"
+    }
+  },
+  "projects": {
+    "simpleff": {
+      "title": "SimpleFF",
+      "description": "A simple interface for FFmpeg built with Tauri/SvelteKit that allows users to select video files and reformat them with customizable codec options."
+    },
+    "climate": {
+      "title": "Climate Visualization Platform",
+      "description": "A collaborative project with a team of 2, where we developed a website featuring a map displaying temperature readings from multiple measuring stations, isolines, and the temperature gradient."
+    },
+    "foodly": {
+      "title": "Food Composition Recognition App",
+      "description": "A mobile application for recognizing the composition of food (dishes) using image recognition technology."
+    },
+    "licensePlate": {
+      "title": "Vehicle License Plate Recognition",
+      "description": "A system for recognizing vehicle license plates for cars and other vehicles using computer vision techniques."
+    },
+    "sveltekitAuth": {
+      "title": "SvelteKit Authentication Example",
+      "description": "Full-stack authentication implementation using SvelteKit and Lucia-auth. Features include email/password, GitHub & Google OAuth, avatar uploads, dark theme, session management (view/revoke), account linking, password reset, and profile updates. Uses Prisma ORM and Zod validation."
+    },
+    "optifineSrc": {
+      "title": "Optifine Decompiled Source",
+      "description": "Decompiled source code for the Optifine mod using ParchmentMC/MCP-Reborn mappings. Includes manual fixes for runnability and covers newer Minecraft versions."
+    }
+  },
+  "a11y": {
+    "bannerImage": "Profile banner",
+    "avatarDecoration": "Avatar decoration",
+    "toggleLanguage": "Open language selection menu",
+    "toggleTheme": "Open theme selection menu",
+    "openProjectInNewTab": "Open {{title}} in a new tab",
+    "copyToClipboard": "Copy {{text}} to clipboard",
+    "toggleMenu": "Open navigation menu"
+  },
+  "copyright": "All rights reserved."
+}

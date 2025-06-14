@@ -4,6 +4,7 @@ import { ImgMeta } from '@/types/image'
 import { Badge } from '../ui/badge'
 import { ScrollArea, ScrollBar } from '../ui/scroll-area'
 import { Image } from './image'
+import { useTranslation } from 'react-i18next'
 
 const LazyImageModal = lazy(() =>
   import('./image-model').then((module) => ({ default: module.ImageModal }))
@@ -29,6 +30,7 @@ export function ProjectCard({
 }: ProjectCardProps) {
   const [isImageModalOpen, setIsImageModalOpen] = useState(false)
   const [selectedImageIndex, setSelectedImageIndex] = useState(0)
+  const { t } = useTranslation()
 
   const openModal = (index: number) => {
     setSelectedImageIndex(index)
@@ -47,7 +49,9 @@ export function ProjectCard({
             className="hover:text-primary/80 p-2 transition-colors"
           >
             <ExternalLink className="h-4 w-4" />
-            <span className="sr-only">Open {title} in a new tab</span>
+            <span className="sr-only">
+              {t('a11y.openProjectInNewTab', { title: title })}
+            </span>
           </a>
         </div>
 

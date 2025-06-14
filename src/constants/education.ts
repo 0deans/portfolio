@@ -1,23 +1,25 @@
+import { TFunction } from 'i18next'
+
 export interface Education {
   degree: string
   institution: string
   period: string
 }
 
-export const education: Education[] = [
+export const getEducation = (t: TFunction): Education[] => [
   {
-    degree: "Bachelor's Degree - Software Engineering",
-    institution: 'ISTU',
-    period: '9/2021 - present'
+    degree: t('educationItems.bachelor.degree'),
+    institution: t('educationItems.bachelor.institution'),
+    period: t('educationItems.bachelor.period')
   },
   {
-    degree: 'High School (Complete Secondary Education)',
+    degree: t('educationItems.highSchool.degree'),
     institution: '',
-    period: '9/2019 - 5/2021'
+    period: t('educationItems.highSchool.period')
   },
   {
-    degree: 'Middle School (Basic Secondary Education)',
+    degree: t('educationItems.middleSchool.degree'),
     institution: '',
-    period: '9/2010 - 6/2019'
+    period: t('educationItems.middleSchool.period')
   }
 ]

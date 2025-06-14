@@ -1,8 +1,11 @@
 import { ExternalLink, Send } from 'lucide-react'
 import { motion } from 'motion/react'
+import { useTranslation } from 'react-i18next'
 import { contactInfo } from '@/constants'
 
 export function ContactSection() {
+  const { t } = useTranslation()
+
   return (
     <section id="contact" className="mt-18 scroll-mt-18">
       <motion.div
@@ -17,7 +20,7 @@ export function ContactSection() {
         className="mb-6 flex items-center gap-3"
       >
         <Send className="text-primary h-6 w-6" />
-        <h2 className="text-3xl font-bold">Contact</h2>
+        <h2 className="text-3xl font-bold">{t('sections.contact')}</h2>
       </motion.div>
 
       <div className="mt-4 grid grid-cols-1 gap-4 sm:grid-cols-2">

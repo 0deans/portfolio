@@ -1,5 +1,6 @@
 import { Check, Copy } from 'lucide-react'
 import { ReactNode, useState } from 'react'
+import { useTranslation } from 'react-i18next'
 import {
   Tooltip,
   TooltipContent,
@@ -22,6 +23,7 @@ export function CopyableText({
   className
 }: CopyableTextProps) {
   const [copied, setCopied] = useState(false)
+  const { t } = useTranslation()
 
   const copyToClipboard = async () => {
     try {
@@ -43,7 +45,7 @@ export function CopyableText({
               'hover:bg-muted inline-flex items-center gap-1 rounded px-1.5 py-0.5 transition-colors',
               className
             )}
-            aria-label={`Copy ${text} to clipboard`}
+            aria-label={t('a11y.copyToClipboard', { text: text })}
           >
             {children || <span>{text}</span>}
             {copied ? (
@@ -54,7 +56,7 @@ export function CopyableText({
           </button>
         </TooltipTrigger>
         <TooltipContent>
-          <p>{copied ? 'Copied!' : 'Click to copy'}</p>
+          <p>{copied ? t('copy.copied') : t('copy.clickToCopy')}</p>
         </TooltipContent>
       </Tooltip>
     </TooltipProvider>

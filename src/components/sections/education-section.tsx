@@ -1,8 +1,12 @@
 import { GraduationCap } from 'lucide-react'
 import { motion } from 'motion/react'
-import { education } from '@/constants'
+import { useTranslation } from 'react-i18next'
+import { getEducation } from '@/constants'
 
 export function EducationSection() {
+  const { t } = useTranslation()
+  const education = getEducation(t)
+
   return (
     <section id="education" className="scroll-mt-18">
       <motion.div
@@ -17,7 +21,7 @@ export function EducationSection() {
         className="mb-6 flex items-center gap-3"
       >
         <GraduationCap className="text-primary h-6 w-6" />
-        <h2 className="text-3xl font-bold">Education</h2>
+        <h2 className="text-3xl font-bold">{t('sections.education')}</h2>
       </motion.div>
 
       <div className="relative">

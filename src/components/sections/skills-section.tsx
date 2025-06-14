@@ -1,8 +1,12 @@
 import { Code } from 'lucide-react'
 import { motion } from 'motion/react'
-import { skillCategories } from '@/constants'
+import { useTranslation } from 'react-i18next'
+import { getSkillCategories } from '@/constants'
 
 export function SkillsSection() {
+  const { t } = useTranslation()
+  const skillCategories = getSkillCategories(t)
+
   return (
     <section id="skills" className="scroll-mt-18">
       <motion.div
@@ -17,12 +21,12 @@ export function SkillsSection() {
         className="mb-6 flex items-center gap-3"
       >
         <Code className="text-primary h-6 w-6" />
-        <h2 className="text-3xl font-bold">Skills</h2>
+        <h2 className="text-3xl font-bold">{t('sections.skills')}</h2>
       </motion.div>
 
       <div className="space-y-6">
-        {skillCategories.map((category) => (
-          <div key={category.name}>
+        {skillCategories.map((category, index) => (
+          <div key={index}>
             <h3 className="text-lg font-medium">{category.name}</h3>
             <ul className="flex flex-wrap gap-2">
               {category.skills.map((skill, index) => (

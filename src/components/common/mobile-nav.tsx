@@ -1,5 +1,6 @@
 import { Menu } from 'lucide-react'
 import { useState } from 'react'
+import { useTranslation } from 'react-i18next'
 import { Button } from '@/components/ui/button'
 import {
   Sheet,
@@ -18,13 +19,14 @@ interface MobileNavProps {
 
 export function MobileNav({ items }: MobileNavProps) {
   const [open, setOpen] = useState(false)
+  const { t } = useTranslation()
 
   return (
     <Sheet open={open} onOpenChange={setOpen}>
       <SheetTrigger asChild>
-        <Button variant="outline" size="icon" className="sm:hidden">
+        <Button variant="outline" size="icon" className="md:hidden">
           <Menu className="h-5 w-5" />
-          <span className="sr-only">Toggle menu</span>
+          <span className="sr-only">{t('a11y.toggleMenu')}</span>
         </Button>
       </SheetTrigger>
       <SheetContent
@@ -34,7 +36,7 @@ export function MobileNav({ items }: MobileNavProps) {
         onCloseAutoFocus={(event) => event.preventDefault()}
       >
         <SheetHeader>
-          <SheetTitle>Navigation</SheetTitle>
+          <SheetTitle>{t('nav.navigation')}</SheetTitle>
         </SheetHeader>
         <nav className="mt-6 flex flex-col gap-4">
           {items.map((item) => (

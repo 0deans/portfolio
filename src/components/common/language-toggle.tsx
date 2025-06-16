@@ -39,7 +39,9 @@ export function LanguageToggle() {
           >
             <span className="text-xs text-gray-400">{lang.flag}</span>
             <span>{lang.label}</span>
-            {i18n.language === lang.code && <Check className="ml-auto h-4 w-4" />}
+            {i18n.language === lang.code && (
+              <Check className="ml-auto h-4 w-4" />
+            )}
           </DropdownMenuItem>
         ))}
       </DropdownMenuContent>

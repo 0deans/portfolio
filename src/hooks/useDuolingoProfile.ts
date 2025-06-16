@@ -10,7 +10,7 @@ const fetchDuolingoProfile = async (username: string) => {
   const duolingoUrl = `https://www.duolingo.com/2017-06-30/users?username=${username}`
   const url = `${baseUrl}${encodeURIComponent(duolingoUrl)}`
   const response = await fetch(url)
-  
+
   const data = await response.json()
   const profile = JSON.parse(data.contents).users[0] as DuolingoData
 

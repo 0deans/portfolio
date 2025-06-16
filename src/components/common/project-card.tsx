@@ -1,13 +1,13 @@
 import { ExternalLink, ImageIcon } from 'lucide-react'
 import { lazy, Suspense, useState } from 'react'
+import { useTranslation } from 'react-i18next'
 import { ImgMeta } from '@/types/image'
 import { Badge } from '../ui/badge'
 import { ScrollArea, ScrollBar } from '../ui/scroll-area'
 import { Image } from './image'
-import { useTranslation } from 'react-i18next'
 
 const LazyImageModal = lazy(() =>
-  import('./image-model').then((module) => ({ default: module.ImageModal }))
+  import('./image-modal').then((module) => ({ default: module.ImageModal }))
 )
 
 interface ProjectCardProps {

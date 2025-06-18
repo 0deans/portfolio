@@ -101,6 +101,10 @@
       "description": "Decompiled source code for the Optifine mod using ParchmentMC/MCP-Reborn mappings. Includes manual fixes for runnability and covers newer Minecraft versions."
     }
   },
+  "carousel": {
+    "previous": "Previous slide",
+    "next": "Next slide"
+  },
   "a11y": {
     "bannerImage": "Profile banner",
     "avatarDecoration": "Avatar decoration",
@@ -108,7 +112,8 @@
     "toggleTheme": "Open theme selection menu",
     "openProjectInNewTab": "Open {{title}} in a new tab",
     "copyToClipboard": "Copy {{text}} to clipboard",
-    "toggleMenu": "Open navigation menu"
+    "toggleMenu": "Open navigation menu",
+    "close": "Close"
   },
   "copyright": "All rights reserved."
 }

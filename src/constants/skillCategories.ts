@@ -36,7 +36,8 @@ export const getSkillCategories = (t: TFunction): SkillCategory[] => [
       'ESLint',
       'Prettier',
       'Vite',
-      'Cloudflare Pages/Workers'
+      'Cloudflare Pages/Workers',
+      'Kanban'
     ]
   }
 ]

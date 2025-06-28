@@ -46,13 +46,13 @@
     "imageCounter": "Image {{current}} of {{total}}"
   },
   "about": {
-    "p1": "I'm a <bold>Full-Stack Developer</bold> with over <bold>two years</bold> of experience in web development. I focus on building <bold>clean</bold>, <bold>efficient</bold>, and <bold>responsive</bold> applications while constantly improving my skills through real-world projects. <italic>I enjoy working in a team</italic> and taking new challenges.",
+    "p1": "I'm a <bold>Full-Stack Developer</bold> with over <bold>3 years</bold> of experience in web development. I focus on building <bold>clean</bold>, <bold>efficient</bold>, and <bold>responsive</bold> applications while constantly improving my skills through real-world projects. <italic>I enjoy working in a team</italic> and taking new challenges.",
     "p2": "My journey in development started in high school when I got into <bold>modding Minecraft</bold>, creating custom modifications and clients in <bold>Java</bold>. That early passion led me to software development, where I continue to explore and grow.",
     "birthdate": "Birthdate",
     "location": "Location",
     "languages": "Languages",
     "locationValue": "Kyiv region, Ukraine",
-    "languagesValue": "Ukrainian (Native), Russian (Fluent), English (Beginner)"
+    "languagesValue": "Ukrainian (Native), Russian (Fluent), English (B1)"
   },
   "skillCategories": {
     "frontend": "Frontend",

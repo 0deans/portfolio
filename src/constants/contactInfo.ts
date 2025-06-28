@@ -1,3 +1,4 @@
+import LinkedInLogo from '@/assets/linkedin.svg?react'
 import {
   IconType,
   SiDiscord,
@@ -9,7 +10,10 @@ import { LucideIcon, Mail } from 'lucide-react'
 export interface ContactInfo {
   platform: string
   value: string
-  icon: LucideIcon | IconType
+  icon:
+    | LucideIcon
+    | IconType
+    | React.FunctionComponent<React.SVGProps<SVGSVGElement>>
   link: string
 }
 
@@ -37,5 +41,11 @@ export const contactInfo: ContactInfo[] = [
     value: '@0deans',
     icon: SiGithub,
     link: 'https://github.com/0deans'
+  },
+  {
+    platform: 'LinkedIn',
+    value: 'Denys Stetsenko',
+    icon: LinkedInLogo,
+    link: 'https://www.linkedin.com/in/0dean'
   }
 ]

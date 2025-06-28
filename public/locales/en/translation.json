@@ -105,6 +105,10 @@
     "previous": "Previous slide",
     "next": "Next slide"
   },
+  "socialPlaceholder": {
+    "title": "Top Secret 🤫",
+    "subtitle": "for now..."
+  },
   "a11y": {
     "bannerImage": "Profile banner",
     "avatarDecoration": "Avatar decoration",

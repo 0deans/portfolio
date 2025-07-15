@@ -27,7 +27,8 @@
   "hero": {
     "seekingOpportunities": "Активно шукаю можливості",
     "seekingDescription": "Як Full-Stack розробник (JavaScript/TypeScript). Готовий до нових викликів!",
-    "getInTouch": "Давайте зв'яжемося"
+    "getInTouch": "Давайте зв'яжемося",
+    "catMotto": "Охоронець\nвихідного\nкоду"
   },
   "duolingo": {
     "learning": "Вивчаю англійську",
